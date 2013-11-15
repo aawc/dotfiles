@@ -1,0 +1,21 @@
+[alias]
+  cm = commit -m
+  f = "!git ls-files | grep -i"
+  l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  ll = log --stat --abbrev-commit
+  s = status
+
+[color]
+  diff = auto
+  interactive = auto
+  ui = auto # covers diff = true, status = auto, branch = auto
+
+[credential]
+	helper = osxkeychain
+
+[diff]
+  tool = vimdiff
+
+[user]
+	email = khaneja+github@gmail.com
+	name = Varun Khaneja
