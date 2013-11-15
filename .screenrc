@@ -1,0 +1,30 @@
+# turn off the annoying "Wuff, Wuff"
+vbell off
+
+# don't show me the copyright screen
+startup_message off
+
+# rebind 'kill window' from CTRL-a k to CTRL-a K
+bind k
+bind K kill
+
+# change the prefix to CTRL-o
+escape ^Bb
+
+hardstatus on
+hardstatus alwayslastline
+
+# colored window list with system stats
+hardstatus string "%{Yk}[%l] |%{w}%=%-w%{Wr}[%n %t]%{-} %+w%=%{Yk} | [%m/%d %c]"
+
+# Scroll back to 5000 lines.
+defscrollback 30000
+
+# Autodetach session on hangup instead of terminating screen completely
+autodetach on
+
+# Activity flash bar
+activity "activity in %n (%t) [%w:%s]~"
+
+# Run everything in UTF-8.
+defutf8 on
