@@ -8,7 +8,7 @@ startup_message off
 bind k
 bind K kill
 
-# change the prefix to CTRL-o
+# change the prefix to CTRL-b
 escape ^Bb
 
 hardstatus on
@@ -17,7 +17,7 @@ hardstatus alwayslastline
 # colored window list with system stats
 hardstatus string "%{Yk}[%l] |%{w}%=%-w%{Wr}[%n %t]%{-} %+w%=%{Yk} | [%m/%d %c]"
 
-# Scroll back to 5000 lines.
+# Scroll back to 30000 lines.
 defscrollback 30000
 
 # Autodetach session on hangup instead of terminating screen completely
