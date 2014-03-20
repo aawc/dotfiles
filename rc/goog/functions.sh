@@ -6,7 +6,7 @@ function rescreen {
     return;
   fi
 
-  local intendedScreenName="$(screen -q -ls | grep "${screenName}" | awk '{print $1}')"
+  local intendedScreenName="$(screen -ls | grep "${screenName}" | awk '{print $1}')"
   if [ -z ${intendedScreenName} ]; then
     printf "Screen %s not found\n" $screenName
   else
