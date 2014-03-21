@@ -7,9 +7,14 @@ function rescreen {
   fi
 
   local intendedScreenName="$(screen -ls | grep "${screenName}" | awk '{print $1}')"
-  if [ -z ${intendedScreenName} ]; then
+  if [ -z "${intendedScreenName}" ]; then
     printf "Screen %s not found\n" $screenName
   else
-    screen -d -r "${intendedScreenName}"
+    local numberOfMatchingScreensFound="$(echo ${intendedScreenName} | wc -w)"
+    if [ "${numberOfMatchingScreensFound}" -eq 1 ]; then
+      screen -d -r "${intendedScreenName}"
+    else
+      printf "Found too many screens:\n%s\n" "${intendedScreenName}"
+    fi
   fi
 }
