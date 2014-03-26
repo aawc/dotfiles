@@ -1,0 +1,20 @@
+build --color=yes
+# This takes advantage of srcfs immutability during the blaze load phase
+build --experimental_srcfs_awareness
+# Increase the maximum number of threads used by blaze.
+build --jobs=500
+# Cache the forward action graph across builds
+build --keep_forward_graph
+# Keep Blaze from spitting out INFO lines about how you're inheriting your rc
+# settings.
+build --noannounce_rc
+# Increase the number of objfs cache hits by not stamping objects with the CL.
+build --nostamp
+
+# Clean thoroughly and in the background so the action cache doesn't become
+# too large.  You should clean your clients every couple of weeks.
+clean --expunge_async
+
+query --keep_going
+
+test --test_output=errors
