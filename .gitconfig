@@ -11,7 +11,7 @@
   ui = auto # covers diff = true, status = auto, branch = auto
 
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 
 [diff]
   tool = vimdiff
