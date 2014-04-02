@@ -12,3 +12,6 @@ nnoremap <leader>gC :CritiqueComments!<CR>
 Glug blaze plugin[mappings]=',b'
 
 :iabbrev g3/ //depot/google3/
+
+Glug outline-window
+nnoremap <leader>g :GoogleOutlineWindow<CR>
