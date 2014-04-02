@@ -10,6 +10,11 @@ build --keep_forward_graph
 build --noannounce_rc
 # Increase the number of objfs cache hits by not stamping objects with the CL.
 build --nostamp
+# Builds and tests get this label so we can tell who isn't importing the
+# standard riskops settings.
+build --sponge_labels=RISKOPS_BLAZERC
+# Upload results to sponge.
+build --use_sponge=streamed
 
 # Clean thoroughly and in the background so the action cache doesn't become
 # too large.  You should clean your clients every couple of weeks.
@@ -17,4 +22,6 @@ clean --expunge_async
 
 query --keep_going
 
+# Tag test results appropriately.
+test --sponge_labels=RISKOPS
 test --test_output=errors

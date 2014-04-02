@@ -15,3 +15,6 @@ alias prodaccess='prodaccess -g'
 # Directories
 alias pqoanon='g4d && cd productquality/common/pqoanon/code'
 alias vesuvius='g4d && goto vesuvius'
+
+
+alias menu='/home/shine/share/menu/menu.par'
