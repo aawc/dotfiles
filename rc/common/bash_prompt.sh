@@ -40,7 +40,10 @@ function power_prompt()
 
 function pretty_pwd() {
   local pwd=${PWD}
+  local git_branch=$(git branch 2> /dev/null | grep '^\*' | awk '{print $2}')
+
   pwd=${pwd/\/google\/src\/cloud\/${USER}\//@}
+  pwd=${pwd/${HOME}\/work\/git/@git:${red}${git_branch}${NC}}
   pwd=${pwd/$HOME/\~}
   echo $pwd
 }
