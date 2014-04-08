@@ -50,8 +50,8 @@ function pretty_pwd() {
   local pwd=${PWD}
 
   pwd=${pwd/\/google\/src\/cloud\/${USER}\//@}
-  pwd=${pwd/${HOME}\/work\/git/@${red}$(parse_git_branch)${NC}}
-  pwd=${pwd/${HOME}\/github/@${red}$(parse_git_branch)${NC}}
+  pwd=${pwd/${HOME}\/work\/git\//@${red}$(parse_git_branch)${NC}\/}
+  pwd=${pwd/${HOME}\/github\//@${red}$(parse_git_branch)${NC}\/}
   pwd=${pwd/$HOME/\~}
   echo $pwd
 }
