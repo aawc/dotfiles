@@ -38,12 +38,20 @@ function power_prompt()
   fi
 }
 
+function parse_git_dirty() {
+  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]] && echo "*"
+}
+
+function parse_git_branch() {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
+}
+
 function pretty_pwd() {
   local pwd=${PWD}
-  local git_branch=$(git branch 2> /dev/null | grep '^\*' | awk '{print $2}')
 
   pwd=${pwd/\/google\/src\/cloud\/${USER}\//@}
-  pwd=${pwd/${HOME}\/work\/git/@git:${red}${git_branch}${NC}}
+  pwd=${pwd/${HOME}\/work\/git/@${red}$(parse_git_branch)${NC}}
+  pwd=${pwd/${HOME}\/github/@${red}$(parse_git_branch)${NC}}
   pwd=${pwd/$HOME/\~}
   echo $pwd
 }
