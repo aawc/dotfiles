@@ -1,13 +1,18 @@
 alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
 alias be="vi ~/.bashrc;source ~/.bashrc"
 alias c="clear"
 alias df="df -h"
+
 alias l="ls"
 alias s="ls"
 alias lh="ls -lh .[a-zA-Z0-9]*"
 alias ll="ls -lh"
 alias l1="ls -1h"
 alias lla="ls -lha"
+
 alias mkdir="mkdir -p"
 alias mv="mv -i"
 alias path="env | grep PATH"
@@ -44,3 +49,5 @@ alias goh='goto h'
 alias gow='goto www'
 alias goroi='goto roi'
 alias roi='goto roi'
+
+alias upgrade='sudo aptitude update && sudo aptitude safe-upgrade'
