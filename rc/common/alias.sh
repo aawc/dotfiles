@@ -6,6 +6,8 @@ alias be="vi ~/.bashrc;source ~/.bashrc"
 alias c="clear"
 alias df="df -h"
 
+alias gh='cd ${HOME}/github'
+
 alias l="ls"
 alias s="ls"
 alias lh="ls -lh .[a-zA-Z0-9]*"
