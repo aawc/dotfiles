@@ -4,7 +4,6 @@ alias ....="cd ../../.."
 
 alias be="vi ~/.bashrc;source ~/.bashrc"
 alias c="clear"
-alias cdcd='cd && cd -'
 alias cm='git commit -m'
 alias df="df -h"
 
