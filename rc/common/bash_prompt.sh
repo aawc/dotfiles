@@ -27,6 +27,13 @@ function host_load()
   fi
 }
 
+function set_xtitle()
+{
+  if [ $TERM == "xterm-256color" ]; then
+    echo -ne "\033]0;${USER}: ${PWD}\007"
+  fi
+}
+
 function power_prompt()
 {
   host_load
