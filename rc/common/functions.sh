@@ -1,6 +1,7 @@
 #!/bin/bash
 
-function rescreen {
+function rescreen
+{
   local screenName="${1}"
   if [ -z "${screenName}" ]; then
     return;

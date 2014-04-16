@@ -10,40 +10,32 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
   source /etc/bash_completion
 fi
 
-HOSTNAME=$(hostname)
+HOSTNAME="$(hostname)"
 # for resolving pesky os differing switches
-OS=$(uname)
+OS="$(uname)"
 
-DOTFILES_DIR='rc'
-HostBashRC="${HOME}/${DOTFILES_DIR}/${HOSTNAME}/bashrc.sh"
-if [ -f "${HostBashRC}" ] && ! shopt -oq posix ; then
-  source ${HostBashRC}
-fi
+DOTFILES_DIR_PREFIX="rc"
+DOTFILES_DIR="${HOME}/${DOTFILES_DIR_PREFIX}"
 
-if [ "$PS1" ]; then  # If running interactively, then run till fi at EOF:
+export BASH_COMMON_DIR='common'
+BashBaseFile="${DOTFILES_DIR}/${BASH_COMMON_DIR}/bash_base.sh"
+source "${BashBaseFile}"
+
+HostBashRC="${DOTFILES_DIR}/${HOSTNAME}/bashrc.sh"
+includeFile "${HostBashRC}"
+
+case "$-" in
+  *i*)
+    SHELL_IS_INTERACTIVE=true ;;
+  *)
+    SHELL_IS_INTERACTIVE=false ;;
+esac
+
+if [ ${SHELL_IS_INTERACTIVE} ]; then  # If running interactively, then run till fi at EOF:
 
 if [ "$TERM" = "screen" ]; then
   export TERM="xterm"
 fi
-
-#  Black       0;30     Dark Gray     1;30
-#  Blue        0;34     Light Blue    1;34
-#  Green       0;32     Light Green   1;32
-#  Cyan        0;36     Light Cyan    1;36
-#  Red         0;31     Light Red     1;31
-#  Purple      0;35     Light Purple  1;35
-#  Brown       0;33     Yellow        1;33
-#  Light Gray  0;37     White         1;37
-
-red='\e[0;31m'
-RED='\e[1;31m'
-blue='\e[0;34m'
-BLUE='\e[1;34m'
-cyan='\e[0;36m'
-CYAN='\e[1;36m'
-green='\e[0;32m'
-GREEN='\e[1;32m'
-NC='\e[0m' #no color
 
 # Bash settings
 #umask 007
@@ -51,8 +43,6 @@ NC='\e[0m' #no color
 #set -o notify       # notify when jobs running in background terminate
 set -o noclobber    # prevents catting over file
 #set -o ignoreeof   # can't c-d out of shell
-#set -o nounset      # attempt to use undefined variable outputs error message and forces exit
-#set -o xtrace      # useful for debuging
 
 # Enable options:
 shopt -s cdspell         # auto fixes cd / spelling mistakes
@@ -307,8 +297,6 @@ function cp_p()
 
 export GREP_COLOR='1;37;41'
 
-#export JAVA_HOME=~${USER}/bin/jdk1.7.0_25/
-
 # PATH
 PATH=$PATH:/usr/local/sbin:/usr/sbin
 PATH=$PATH:$HOME/bin
@@ -321,8 +309,6 @@ PATH=$PATH:${HOME}/bin/w
 export PATH=$(echo $PATH | awk -F: '
 { for (i = 1; i <= NF; i++) arr[$i]; }
 END { for (i in arr) printf "%s:" , i; printf "\n"; } ')
-PATH=$MPLAYER_PATH:$PATH
-PATH="${JAVA_HOME}"/bin:$PATH
 PATH=$HOME/bin:$PATH
 PATH=$PATH:/sbin
 
@@ -380,13 +366,6 @@ function _exit()
   echo -e "${RED}So long and thanks for all the fish${NC}"
 }
 trap _exit EXIT
-
-function set_xtitle()
-{
-  if [ $TERM == "xterm-256color" ]; then
-    echo -ne "\033]0;${USER}: ${PWD}\007"
-  fi
-}
 
 function sendrc()
 {
