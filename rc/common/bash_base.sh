@@ -2,6 +2,7 @@
 
 function prolog
 {
+  :
   #set -o nounset
 
   # Closes the terminal if there's an error
@@ -10,7 +11,7 @@ function prolog
   # Useful for debugging
   #set -o xtrace
 
-  trap "{ echo; exit 1; }" INT
+  #trap "{ echo; exit 1; }" INT
 }
 
 function includeFile
