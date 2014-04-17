@@ -13,8 +13,11 @@ Plugin 'gmarik/vundle'
 
 Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/vim-easymotion'
+Plugin 'majutsushi/tagbar'
+Plugin 'bling/vim-airline'
 
 filetype plugin indent on     " required
 " ----
 " DONE
+" Now close,re-open vim and run :PluginInstall
 " ----
