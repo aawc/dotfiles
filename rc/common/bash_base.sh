@@ -2,7 +2,7 @@
 
 function prolog
 {
-  set -o nounset
+  #set -o nounset
 
   # Closes the terminal if there's an error
   #set -o errexit
