@@ -4,7 +4,8 @@ function rescreen
 {
   local screenName="${1}"
   if [ -z "${screenName}" ]; then
-    return;
+    screen -ls
+    return
   fi
 
   local intendedScreenName="$(screen -ls | grep "${screenName}" | awk '{print $1}')"
