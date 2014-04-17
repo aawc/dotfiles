@@ -1,0 +1,2 @@
+source $HOME/rc/goog/google.vim
+source $HOME/rc/goog/ycm.vim
