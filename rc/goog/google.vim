@@ -15,3 +15,6 @@ Glug blaze plugin[mappings]=',b'
 
 Glug outline-window
 nnoremap <leader>g :GoogleOutlineWindow<CR>
+
+"http://go/buildifier
+let g:auto_buildifier = 1
