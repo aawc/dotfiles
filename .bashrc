@@ -270,7 +270,7 @@ function goto()
     if [ $success -eq 1 ]; then echo $COMMAND; fi
   fi
 
-    if [ -n "${COMMAND}" ]; then
+  if [ -n "${COMMAND}" ]; then
     eval $COMMAND;
   fi
 }
@@ -447,7 +447,7 @@ function pp() { my_ps f | awk '!/awk/ && $0~var' var=${1:-".*"} ; }  # doesn't w
 function ff() { find . -name '*'$1'*' ; }  # find a file  # works
 function fe() { FPAT="${1}"; find . -name '*'${FPAT}'*' -exec ${@} {} \; ; }  # find a file and run $2 on it  # works
 
-function show-archive()  # not tested on mac
+function show_archive()  # not tested on mac
 {
   if [ -f $1 ]; then
     case $1 in
