@@ -20,3 +20,15 @@ function rescreen
     fi
   fi
 }
+
+function epoch(){
+  [[ -z "${1}" ]] || date -d @"${1}"
+}
+
+function epoch_milli(){
+  [[ -z "${1}" ]] && return
+
+  local time_in_milli="${1}"
+  local time_in_secs="$( echo "${time_in_milli} / 1000" | bc -l )"
+  epoch "${time_in_secs}"
+}
