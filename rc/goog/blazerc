@@ -1,4 +1,7 @@
 build --color=yes
+# Build optimized releases.
+# This will also test in optimized mode; we test exactly what we release.
+build --compilation_mode=opt
 # This takes advantage of srcfs immutability during the blaze load phase
 build --experimental_srcfs_awareness
 # Increase the maximum number of threads used by blaze.
