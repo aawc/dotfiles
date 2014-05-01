@@ -18,6 +18,9 @@ alias lla="ls -lha"
 
 alias mkdir="mkdir -p"
 alias mv="mv -i"
+
+alias network_reset="sudo service network-manager stop; sudo service network-manager start"
+
 alias path="env | grep PATH"
 alias pcd="cd -"
 alias pico="vi"
