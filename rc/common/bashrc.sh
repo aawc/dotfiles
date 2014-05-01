@@ -15,6 +15,9 @@ function run
 
   local BASH_PROMPT_FILE="${MY_DIR}/bash_prompt.sh"
   includeFile "${BASH_PROMPT_FILE}"
+
+  local EXPORTS_FILE="${MY_DIR}/exports.sh"
+  includeFile "${EXPORTS_FILE}"
 }
 
 run

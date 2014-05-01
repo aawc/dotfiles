@@ -69,9 +69,6 @@ elif [ $OS = "Darwin" ]; then
   alias ls='ls -G'
 fi
 
-export P4DIFF='${HOME}/bin/p4/bin/p4merge'
-export P4DIFF=colordiff
-
 function pfp
 { export P4PORT=${FPPORT}; export P4CLIENT=${FPCLIENT}; export P4USER=${FPUSER}; }
 function pfpl
