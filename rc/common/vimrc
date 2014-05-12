@@ -14,6 +14,7 @@ Plugin 'gmarik/vundle'
 Plugin 'bling/vim-airline'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'majutsushi/tagbar'
+Plugin 'Valloric/MatchTagAlways'
 
 Plugin 'pangloss/vim-javascript'
 let javascript_enable_domhtmlcss=1
