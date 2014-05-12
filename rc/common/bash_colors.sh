@@ -17,5 +17,6 @@ export cyan='\e[0;36m'
 export CYAN='\e[1;36m'
 export green='\e[0;32m'
 export GREEN='\e[1;32m'
+export YELLOW='\e[1;33m'
 export NC='\e[0m' #no color
 
