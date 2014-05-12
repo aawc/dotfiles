@@ -19,6 +19,9 @@
 [help]
 	autocorrect = 1
 
+[push]
+	default = simple
+
 [user]
   email = ca.aawc@yahoo.com
   name = Varun Khaneja
