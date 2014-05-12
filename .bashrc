@@ -48,6 +48,8 @@ set -o noclobber    # prevents catting over file
 shopt -s cdspell         # auto fixes cd / spelling mistakes
 shopt -s cdable_vars
 shopt -s checkhash
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 shopt -s cmdhist
 shopt -s extglob    # necessary for programmable completion
