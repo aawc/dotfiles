@@ -1,0 +1,4 @@
+#!/bin/bash
+
+35 17 * * * "${HOME}/github/dotfiles/misc/linux/crontab/leaveWork.sh"
+00 09 * * * "${HOME}/github/dotfiles/misc/linux/crontab/comeInToWork.sh"
