@@ -4,4 +4,4 @@
 # don't miss my bus.
 DISPLAY=:0 gnome-screensaver-command -l
 # Mute the system so that others aren't disturbed in my absence.
-amixer -d set Master mute >/dev/null 2>&1
+amixer -D pulse set Master 1+ mute >/dev/null 2>&1

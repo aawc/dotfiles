@@ -23,3 +23,13 @@ alias ppio pp [a.__dict__ for a in %1]
 !termios_echo = termios.tcgetattr(termios_fd)
 !termios_echo[3] = termios_echo[3] | termios.ECHO
 !termios_result = termios.tcsetattr(termios_fd, termios.TCSADRAIN, termios_echo)
+
+# Print the member variables of a thing.
+alias pi p_ %1.__dict__ %1.
+
+# Next and list, and step and list.
+alias nl n;;l
+alias sl s;;l
+
+# Always list the current line, even if you already listed it
+alias ll u;;d;;l
