@@ -58,10 +58,15 @@ function parse_git_branch() {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
 }
 
+function g4_client() {
+  g4 info 2>/dev/null | grep 'Client name' | awk -F ':' '{print $3}'
+}
+
 function pretty_pwd() {
   local pwd=${PWD}
 
-  pwd=${pwd/\/google\/src\/cloud\/${USER}\//@}
+  pwd=${pwd/\/google\/src\/cloud\/${USER}\/$(g4_client)\/google3\//@$(g4_client) }
+  pwd=${pwd/\/google\/src\/cloud\/${USER}\/$(g4_client)\/google3/@$(g4_client) }
   pwd=${pwd/${HOME}\/work\/git\//@"\[${red}\]"$(parse_git_branch)"\[${YELLOW}\]"\/}
   pwd=${pwd/${HOME}\/github\//@"\[${red}\]"$(parse_git_branch)"\[${YELLOW}\]"\/}
   pwd=${pwd/$HOME/\~}
