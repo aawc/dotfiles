@@ -58,22 +58,24 @@ function parse_git_branch() {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
 }
 
-G4_DIR_COMMON_PREFIX="/google/src/cloud/${USER}"
 function g4_client() {
+  local g4DirCommonPrefix="${1}"
   # grep so that if the current directory does not match the pattern, it's skipped.
-  echo $PWD | grep "${G4_DIR_COMMON_PREFIX}" | sed -e "s#${G4_DIR_COMMON_PREFIX}/\([^/]*\)/google3.*#\1#"
+  echo $PWD | grep "${g4DirCommonPrefix}" | sed -e "s#${g4DirCommonPrefix}/\([^/]*\)/google3.*#\1#"
 }
 
 function g4_dir_prefix() {
-  local g4Client="${1}"
-  echo $PWD | sed -e "s#\(${G4_DIR_COMMON_PREFIX}/${g4Client}\/google3[/]*\).*#\1#"
+  local g4DirCommonPrefix="${1}"
+  local g4Client="${2}"
+  echo $PWD | sed -e "s#\(${g4DirCommonPrefix}/${g4Client}\/google3[/]*\).*#\1#"
 }
 
 function pretty_pwd() {
   local pwd=${PWD}
-  local g4Client="$(g4_client)"
+  local g4DirCommonPrefix="/google/src/cloud/${USER}"
+  local g4Client="$(g4_client ${g4DirCommonPrefix})"
   if [[ -n "${g4Client}" ]]; then
-    local g4DirPrefix="$(g4_dir_prefix ${g4Client})"
+    local g4DirPrefix="$(g4_dir_prefix ${g4DirCommonPrefix} ${g4Client})"
     pwd=${pwd/${g4DirPrefix}/@${g4Client} }
   fi
 
