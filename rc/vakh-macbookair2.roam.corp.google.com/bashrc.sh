@@ -13,6 +13,9 @@ function run
 
   local ALIAS_FILE="${MY_DIR}/alias.sh"
   includeFile "${ALIAS_FILE}"
+
+  local SOURCE_FILE="${MY_DIR}/source.sh"
+  includeFile "${SOURCE_FILE}"
 }
 
 run
