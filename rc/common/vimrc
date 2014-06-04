@@ -25,3 +25,4 @@ filetype plugin indent on     " required
 " DONE
 " Now close,re-open vim and run :PluginInstall
 " ----
+exec ":source $HOME" . "/rc/common/easymotion.vimrc"
