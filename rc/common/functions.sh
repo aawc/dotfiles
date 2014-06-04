@@ -41,3 +41,10 @@ function epoch_milli(){
   local time_in_secs="$( echo "${time_in_milli} / 1000" | bc -l )"
   epoch "${time_in_secs}"
 }
+
+function source_file() {
+  local file_to_source="${1}"
+  if [[ -f "${file_to_source}" ]]; then
+    source "${file_to_source}"
+  fi
+}
