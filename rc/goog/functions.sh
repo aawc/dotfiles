@@ -1,8 +1,7 @@
 #!/bin/bash
 
-function cdcd
+function open_cls_g4
 {
-  local clientName="$(echo $PWD | sed -e 's/.*\/\(.*\)\/google3.*/\1/')";
-  echo "Client name: ${clientName}"
-  g4d "${clientName}"
+  g4 status | grep -v ' default ' | awk '{print $5}' | sort -n | uniq
+  g4 status | grep default | awk '{print $4}' | uniq
 }
