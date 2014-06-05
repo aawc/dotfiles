@@ -10,6 +10,6 @@ function pending_cls_g4
 {
   local open_cls="$(list_open_cls_g4 | tr '\n' ' ')"
   if [[ -n "${open_cls}" ]]; then
-    g4 describe -s -c ${open_cls} | grep -E '^Change|$' | less -r
+    g4 describe -s -c ${open_cls} | less -p '^Change|$'
   fi
 }
