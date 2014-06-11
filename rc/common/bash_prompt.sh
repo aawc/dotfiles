@@ -38,15 +38,16 @@ function power_prompt()
 {
   host_load
   set_xtitle
+  local promptColor
   if [ "$UID" -eq 0 ]; then
-    PS1="[\[$HOST_COLOR\]\$(date +%H:%M)\[${NC}\]]"
-    PS1="$PS1[\[${red}\]\u@\h\[$NC\]: \[$YELLOW\]$(pretty_pwd)\[$NC\]]"
-    PS1="$PS1\[$LIGHTRED\]$\[$NC\] "
+    promptColor="${red}"
   else
-    PS1="[\[$HOST_COLOR\]\$(date +%H:%M)\[${NC}\]]"
-    PS1="$PS1[\[${cyan}\]\u@\h\[$NC\]: \[$YELLOW\]$(pretty_pwd)\[$NC\]]"
-    PS1="$PS1\[$LIGHTRED\]$\[$NC\] "
+    promptColor="${cyan}"
   fi
+  PS1="[\[$HOST_COLOR\]\$(date +%H:%M:%S)\[${NC}\]]"
+  PS1="$PS1[\[${promptColor}\]\u@\h\[$NC\]: \[$YELLOW\]$(pretty_pwd)\[$NC\]]"
+  PS1="$PS1[\#]\[$LIGHTRED\]$\[$NC\] "
+
   PS2="\[$WHILE\]=>\[$NC\]"
 }
 
