@@ -21,7 +21,7 @@ alias mv="mv -i"
 
 alias network_reset="sudo service network-manager stop; sudo service network-manager start"
 
-alias path="env | grep PATH"
+alias path='echo -e ${PATH//:/\\n}'
 alias pcd="cd -"
 alias pico="vi"
 alias psa="ps aux"
