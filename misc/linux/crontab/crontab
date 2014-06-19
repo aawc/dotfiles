@@ -1,2 +1,3 @@
 35 17 * * * "${HOME}/github/dotfiles/misc/scripts/leaveWork.sh"
 00 09 * * * "${HOME}/github/dotfiles/misc/scripts/comeInToWork.sh"
+00 09 * * * "${HOME}/github/dotfiles/misc/scripts/emailOnPageChange.sh"
