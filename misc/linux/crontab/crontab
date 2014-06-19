@@ -1,2 +1,2 @@
-35 17 * * * "${HOME}/github/dotfiles/misc/linux/crontab/leaveWork.sh"
-00 09 * * * "${HOME}/github/dotfiles/misc/linux/crontab/comeInToWork.sh"
+35 17 * * * "${HOME}/github/dotfiles/misc/scripts/leaveWork.sh"
+00 09 * * * "${HOME}/github/dotfiles/misc/scripts/comeInToWork.sh"
