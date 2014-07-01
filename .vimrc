@@ -236,5 +236,5 @@ if has("autocmd")
         \| exe "normal! g'\"" | endif
 endif
 
-colorscheme desert
+colorscheme elflord
 set background=dark
