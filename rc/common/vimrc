@@ -12,8 +12,11 @@ call vundle#rc()
 Plugin 'gmarik/vundle'
 
 Plugin 'bling/vim-airline'
+Plugin 'groenewege/vim-less'
+Plugin 'hail2u/vim-css3-syntax'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'majutsushi/tagbar'
+Plugin 'skammer/vim-css-color'
 Plugin 'Valloric/MatchTagAlways'
 
 Plugin 'pangloss/vim-javascript'

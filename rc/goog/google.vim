@@ -18,3 +18,6 @@ nnoremap <leader>g :GoogleOutlineWindow<CR>
 
 "http://go/buildifier
 let g:auto_buildifier = 1
+
+" Open the current file in Chrome:
+nnoremap <leader>cs :!google-chrome --new-window https://cs.corp.google.com\\#%:p:s?.*./google3/?google3/?<CR> <CR>
