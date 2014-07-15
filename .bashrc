@@ -245,35 +245,6 @@ elif [ "${OS}" = "Solaris" ]; then
   fi
 fi
 
-function goto()
-{
-  if [ $# -eq 0 ]; then
-    COMMAND="echo $FUNCNAME [vesuvius|h|roi|w]'?";
-  else
-    shift $(($#-1));
-    ARGUMENT=$1;
-
-    success=1;
-    case $ARGUMENT in
-      vesuvius)
-        COMMAND="cd onlinesales/riskops/vesuvius";;
-      h)
-        COMMAND="cd ${HOME}";;
-      roi | ro-i)
-        COMMAND="g4d ro-i";;
-      w | www)
-        COMMAND="cd ~/www";;
-      *) echo "Did you mean one of '$FUNCNAME [vesuvius|h|roi|w]'?";;
-    esac
-
-    if [ $success -eq 1 ]; then echo $COMMAND; fi
-  fi
-
-  if [ -n "${COMMAND}" ]; then
-    eval $COMMAND;
-  fi
-}
-
 function cp_p()
 {
   set -e
@@ -318,32 +289,6 @@ export HISTCONTROL=ignoredups
 export HISTSIZE=1000
 export HISTTIMEFORMAT="%h/%d - %H:%M:%S | "
 export HOSTFILE=$HOME/.hosts
-
-function mcd ()
-{
-  DirToCreateAndChangeTo="$1";
-  if ( [ $# -ne 1 ] || [ ! -d "${DirToCreateAndChangeTo}" -a -e "${DirToCreateAndChangeTo}" ] ); then
-    # Number of arguments != 1; OR
-    # Argument is a file.
-    # Chicken out!
-    echo "Either incorrect number of arguments, or a file by that name already exists. Bailing!";
-  elif [ -d "${DirToCreateAndChangeTo}" ]; then
-    # Is a directory;
-    echo -n "${PWD} -> "
-    cd "${DirToCreateAndChangeTo}";
-    echo "${PWD}"
-  else
-    mkdir -pv "${DirToCreateAndChangeTo}";
-    if [ $? -ne 0 ]; then
-      echo "Unable to create directory: ${DirToCreateAndChangeTo}. Bailing!";
-    else
-      echo -n "${PWD} -> "
-      cd "${DirToCreateAndChangeTo}";
-      echo "${PWD}"
-    fi
-  fi
-}
-
 
 function android_dev()
 {
@@ -428,7 +373,7 @@ function repeat()
 
 function ii()  # get current host related info  # kind of works on mac.  different interface.  dynamic-able?
 {
-  echo -e "\nYou are logged onto ${RED}$HOST"
+  echo -e "\nYou are logged onto ${RED}${HOSTNAME}"
   echo -e "\nAdditionnal information:$NC " ; uname -a
   echo -e "\n${RED}Users logged on:$NC " ; w -h
   echo -e "\n${RED}Current date :$NC " ; date
@@ -445,57 +390,6 @@ function pp() { my_ps f | awk '!/awk/ && $0~var' var=${1:-".*"} ; }  # doesn't w
 
 function ff() { find . -name '*'$1'*' ; }  # find a file  # works
 function fe() { FPAT="${1}"; find . -name '*'${FPAT}'*' -exec ${@} {} \; ; }  # find a file and run $2 on it  # works
-
-function show_archive()  # not tested on mac
-{
-  if [ -f $1 ]; then
-    case $1 in
-      *.tar.gz)   gunzip -c $1 | tar -tf - -- ;;
-      *.tar.bz2)  bunzip2 -c $1 | tar -tf - -- ;;
-      *.tar)      tar -tf $1 ;;
-      *.tgz)      tar -ztf $1 ;;
-      *.zip)      unzip -l $1 ;;
-      *)      echo "'$1' Error. Please go away" ;;
-    esac
-  else
-    echo "'$1' is not a valid archive"
-  fi
-}
-
-function gojo ()
-{
-  local FILENAME="${1}";
-  if [ -f $1 ]; then
-  case $1 in
-    *.tar)
-    tar xvf "$FILENAME";;
-    *.tar.gz)
-    tar xzvf "$FILENAME";;
-    *.tgz)
-    tar xzvf "$FILENAME";;
-    *.gz)
-    gunzip "$FILENAME";;
-    *.tbz)
-    tar xjvf "$FILENAME";;
-    *.tbz2)
-    tar xjvf "$FILENAME";;
-    *.tar.bz2)
-    tar xjvf "$FILENAME";;
-    *.tar.bz)
-    tar xjvf "$FILENAME";;
-    *.bz2)
-    bunzip2 "$FILENAME";;
-    *.tar.Z)
-    tar xZvf "$FILENAME";;
-    *.Z)
-    uncompress "$FILENAME";;
-    *.zip)
-    unzip "$FILENAME";;
-    *.rar)
-    unrar x "$FILENAME";;
-  esac
-  fi
-}
 
 function lowercase()  # move filenames to lowercase  # not working on mac
 {
