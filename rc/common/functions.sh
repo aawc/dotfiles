@@ -18,7 +18,9 @@ function rescreen
   local intendedScreenName="$(echo ${runningScreens} | tr ' ' '\n' | grep "${screenName}")"
   if [ -z "${intendedScreenName}" ]; then
     printf "Screen %s not found.\n" $screenName
-    printf "Found the following screens running:\n${runningScreens}\n"
+    if [ -n "${runningScreens}" ]; then
+      printf "Found the following screens running:\n${runningScreens}\n"
+    fi
     local startScreen="N"
     read -r -p "Want to start a session named '${screenName}'? [y/N]: " startScreen
     case "${startScreen}" in
