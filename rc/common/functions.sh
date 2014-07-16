@@ -15,7 +15,7 @@ function rescreen
     return
   fi
 
-  local intendedScreenName="$(echo ${runningScreens} | grep "${screenName}")"
+  local intendedScreenName="$(echo ${runningScreens} | tr ' ' '\n' | grep "${screenName}")"
   if [ -z "${intendedScreenName}" ]; then
     printf "Screen %s not found.\n" $screenName
     printf "Found the following screens running:\n${runningScreens}\n"
