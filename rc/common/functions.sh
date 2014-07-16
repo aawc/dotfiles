@@ -3,15 +3,22 @@
 function rescreen
 {
   local screenName="${1}"
+  local runningScreens="$(screen -ls | grep '^\s*[0-9][0-9]*\.' | awk '{print $1}')"
+
   if [ -z "${screenName}" ]; then
-    screen -ls
+    if [ -z "${runningScreens}" ]; then
+      printf "No screens running.\n"
+      return
+    fi
+
+    printf "Found the following screens running:\n${runningScreens}\n"
     return
   fi
 
-  local intendedScreenName="$(screen -ls | grep "^\s.*${screenName}" | awk '{print $1}')"
+  local intendedScreenName="$(echo ${runningScreens} | grep "${screenName}")"
   if [ -z "${intendedScreenName}" ]; then
     printf "Screen %s not found.\n" $screenName
-    printf "$(screen -ls)"
+    printf "Found the following screens running:\n${runningScreens}\n"
     local startScreen="N"
     read -r -p "Want to start a session named '${screenName}'? [y/N]: " startScreen
     case "${startScreen}" in
