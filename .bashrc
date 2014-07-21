@@ -31,7 +31,7 @@ case "$-" in
     SHELL_IS_INTERACTIVE=false ;;
 esac
 
-if [ ${SHELL_IS_INTERACTIVE} ]; then  # If running interactively, then run till fi at EOF:
+if [ ${SHELL_IS_INTERACTIVE} -a -n "${PS1}" ]; then  # If running interactively, then run till fi at EOF:
 
 if [ "$TERM" = "screen" ]; then
   export TERM="xterm"
