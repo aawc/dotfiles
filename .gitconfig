@@ -10,6 +10,9 @@
   interactive = auto
   ui = auto # covers diff = true, status = auto, branch = auto
 
+[core]
+  excludesfile = ~/.gitignore
+
 [credential]
   helper = osxkeychain
 
