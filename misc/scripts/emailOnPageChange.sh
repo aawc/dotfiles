@@ -19,7 +19,7 @@ function bdebug()
 
 function sendEmailOnPageChange()
 {
-  local notifyEmail="${NOTIFY_EMAIL:-${USER}}"
+  local notifyEmail="${NOTIFY_EMAIL:-vakh}"
   local urlToMonitor="${URL_TO_MONITOR:-"http://switchproxy.proxify.net/satellite_ids.xml"}"
   local tmp="${TMPDIR:-/tmp}"
   local basename="$(basename ${urlToMonitor})"
