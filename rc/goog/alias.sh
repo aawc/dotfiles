@@ -3,6 +3,7 @@
 alias buildifier='buildifier -a -v'
 alias desc='g4 describe -s'
 alias descl='g4 describe'
+alias g5='/google/data/ro/projects/shelltoys/g5.sar'
 alias gg='g4'
 alias ggd='g4d'
 alias ggcdiff='P4DIFF=colordiff g4 diff'
