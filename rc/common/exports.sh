@@ -1,14 +1,12 @@
 #!/bin/bash
 
-if [ -n "${DISPLAY}" -a -n "$(which meld)" ]; then
-  export P4DIFF=meld
-elif [ -n "$(which colordiff)" ]; then
+if [ -n "$(which colordiff 2>/dev/null)" ]; then
   export P4DIFF=colordiff
 else
   export P4DIFF=diff
 fi
 
-if [ -n "${DISPLAY}" -a -n "$(which p4merge)" ]; then
+if [ -n "${DISPLAY}" -a -n "$(which p4merge 2>/dev/null)" ]; then
   export P4MERGE=p4merge
 fi
 
