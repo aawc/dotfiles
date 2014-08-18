@@ -23,7 +23,6 @@ alias network_reset="sudo service network-manager stop; sudo service network-man
 
 alias path='echo -e ${PATH//:/\\n}'
 alias pcd="cd -"
-alias pdb="python ${HOME}/github/learn/python/get_pdb.py"
 alias pico="vi"
 alias psa="ps aux"
 alias rl="source ${HOME}/.bashrc"
