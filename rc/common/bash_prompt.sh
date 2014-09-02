@@ -38,15 +38,19 @@ function power_prompt()
 {
   host_load
   set_xtitle
-  local promptColor
+  local promptTextColor="${cyan}"
   if [ "$UID" -eq 0 ]; then
-    promptColor="${red}"
-  else
-    promptColor="${cyan}"
+    promptTextColor="${red}"
+  fi
+  local prompColor="${white}"
+  local prodaccessStatus="$(prodaccess_missing 2>/dev/null)"
+  if [ -n "${prodaccessStatus}" ]; then
+    prompColor="${RED}"
+    prodaccessStatus="(${prodaccessStatus}) "
   fi
   PS1="[\[$HOST_COLOR\]\$(date +%H:%M:%S)\[${NC}\]]"
-  PS1="$PS1[\[${promptColor}\]\u@\h\[$NC\]: \[$YELLOW\]$(pretty_pwd)\[$NC\]]"
-  PS1="$PS1[\#]\[$LIGHTRED\]$\[$NC\] "
+  PS1="$PS1[\[${promptTextColor}\]\u@\h\[$NC\]: \[$YELLOW\]$(pretty_pwd)\[$NC\]]"
+  PS1="$PS1[\#]\[${prompColor}\]\$ ${prodaccessStatus}\[$NC\]"
 
   PS2="\[$WHILE\]=>\[$NC\]"
 }
@@ -72,12 +76,12 @@ function g4_dir_prefix() {
 }
 
 function pretty_pwd() {
-  local pwd=${PWD}
+  local pwd="${PWD}"
   local g4DirCommonPrefix="/google/src/cloud/${USER}"
   local g4Client="$(g4_client ${g4DirCommonPrefix})"
   if [[ -n "${g4Client}" ]]; then
     local g4DirPrefix="$(g4_dir_prefix ${g4DirCommonPrefix} ${g4Client})"
-    pwd=${pwd/${g4DirPrefix}/@${g4Client} }
+    pwd="${pwd/${g4DirPrefix}/@${g4Client} }"
   fi
 
   local gitDirectory="$(echo ${PWD} | grep git)"
