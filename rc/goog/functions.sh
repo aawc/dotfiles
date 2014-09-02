@@ -13,3 +13,10 @@ function pending_cls_g4
     g4 describe -s -c ${open_cls} | less -p '^Change|$'
   fi
 }
+
+function prodaccess_missing
+{
+  if [ ! -d /google/src/cloud ]; then
+    echo "prodaccess missing";
+  fi
+}
