@@ -14,8 +14,11 @@ escape ^Bb
 hardstatus on
 hardstatus alwayslastline
 
+
+backtick 1 0 5 sh -c "if [ -d /google/src -a ! -d /google/src/cloud ]; then echo '[!]'; else echo ''; fi"
+
 # colored window list with system stats
-hardstatus string "%{Yk}[%l] |%{w}%=%-w%{Wr}[%n %t]%{-} %+w%=%{Yk} | [%m/%d %c]"
+hardstatus string "%{Yk}[%l] |%{w}%=%-w%{Rk}%1`%{Wr}[%n %t]%{-} %+w%=%{Yk} | [%m/%d %c]"
 
 # Scroll back to 30000 lines.
 defscrollback 30000
