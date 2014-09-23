@@ -14,9 +14,12 @@ function pending_cls_g4
   fi
 }
 
-function prodaccess_missing
+function is_prodaccess_missing
 {
-  if [ ! -d /google/src/cloud ]; then
-    echo "prodaccess missing";
-  fi
+  [ -d /google -a ! -d /google/src/cloud ]
+}
+
+function prodaccess_missing_message
+{
+  echo "(prodaccess missing)"
 }

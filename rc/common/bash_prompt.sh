@@ -43,10 +43,10 @@ function power_prompt()
     promptTextColor="${red}"
   fi
   local prompColor="${white}"
-  local prodaccessStatus="$(prodaccess_missing 2>/dev/null)"
-  if [ -n "${prodaccessStatus}" ]; then
+  local prodaccessStatus=""
+  if is_prodaccess_missing ; then
+    prodaccessStatus="$(prodaccess_missing_message) "
     prompColor="${RED}"
-    prodaccessStatus="(${prodaccessStatus}) "
   fi
   PS1="[\[$HOST_COLOR\]\$(date +%H:%M:%S)\[${NC}\]]"
   PS1="$PS1[\[${promptTextColor}\]\u@\h\[$NC\]: \[$YELLOW\]$(pretty_pwd)\[$NC\]]"
