@@ -103,3 +103,7 @@ else
     PS1="[\A][\[${cyan}\]\u@\h\[${NC}\]: \w]\$ "
   fi
 fi
+
+# Bash permanent history
+HISTTIMEFORMAT='%F %T '
+PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ; }"'echo $$ $USER \ "$(history 1)" >> ~/.bash_permanent_history'
