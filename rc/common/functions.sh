@@ -43,11 +43,20 @@ function epoch(){
   [[ -z "${1}" ]] || date -d @"${1}"
 }
 
-function epoch_milli(){
-  [[ -z "${1}" ]] && return
+function epoch_milli() {
+  [[ -z "${1}" ]] || _epoch_base ${1} 1000
+}
 
-  local time_in_milli="${1}"
-  local time_in_secs="$( echo "${time_in_milli} / 1000" | bc -l )"
+function epoch_micro() {
+  [[ -z "${1}" ]] || _epoch_base ${1} 1000000
+}
+
+function _epoch_base(){
+  [[ "${#}" -ne 2 ]] && return
+
+  local time_input="${1}"
+  local base="${2}"
+  local time_in_secs="$( echo "${time_input} / ${base}" | bc -l )"
   epoch "${time_in_secs}"
 }
 
