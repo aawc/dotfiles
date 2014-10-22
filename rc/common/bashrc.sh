@@ -18,6 +18,9 @@ function run
 
   local EXPORTS_FILE="${MY_DIR}/exports.sh"
   includeFile "${EXPORTS_FILE}"
+
+  local ANDROID_FILE="${MY_DIR}/android.sh"
+  includeFile "${ANDROID_FILE}"
 }
 
 run
