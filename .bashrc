@@ -138,14 +138,10 @@ PATH=$PATH:$HOME/bin
 PATH=$PATH:$HOME/scripts
 PATH=$PATH:${HOME}/bin/Adobe/Reader9/bin
 PATH=$PATH:${HOME}/bin/w
-#PATH=$PATH:/home/varunk/bin/baksmali
 
 # Remove duplicate path
-export PATH=$(echo $PATH | awk -F: '
-{ for (i = 1; i <= NF; i++) arr[$i]; }
-END { for (i in arr) printf "%s:" , i; printf "\n"; } ')
-PATH=$HOME/bin:$PATH
-PATH=$PATH:/sbin
+export PATH="$(echo "${PATH}" | tr ':' '\n' | sort | uniq | tr '\n' ':')"
+PATH=$PATH/sbin
 
 # Misc Variables
 export EDITOR="vim"
