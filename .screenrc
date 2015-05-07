@@ -8,17 +8,7 @@ startup_message off
 bind k
 bind K kill
 
-# change the prefix to CTRL-s
-escape ^Ss
-
-hardstatus on
-hardstatus alwayslastline
-
-
 backtick 1 0 5 sh -c "if [ -d /google/src -a ! -d /google/src/cloud ]; then echo '[!]'; else echo ''; fi"
-
-# colored window list with system stats
-hardstatus string "%{Yk}[%l] |%{w}%=%-w%{Rk}%1`%{-}%{Wr}[%n %t]%{-} %+w%=%{Yk} | [%m/%d %c]"
 
 # Scroll back to 30000 lines.
 defscrollback 30000
@@ -31,3 +21,28 @@ activity "activity in %n (%t) [%w:%s]~"
 
 # Run everything in UTF-8.
 defutf8 on
+
+# From: http://superuser.com/a/74844
+# Set ` as the default escape, but use F12 to toggle that to Ctrl-O
+## command characters
+escape \140\140                 # default is `
+
+## sets caption and escape toggle
+bindkey -d -k F2 process a     # bound to F12
+
+## initial caption
+caption always '%{Yk}[%l] |%{w}%=%-w%{Rk}%1`%{-}%{Wr}[%n %t]%{-} %+w%=>>>%{Yk} | [%m/%d %c]'
+
+## registers to toggle bindkeys
+register a "\140:eval 'bindkey -d -k F2 process b' 'process c' 'escape \\017\\017'^M"
+register b "\017:eval 'bindkey -d -k F2 process a' 'process d' 'escape \\140\\140'^M"
+
+## registers to change captions
+register c "\140:caption string '%{Yk}[%l] |%{w}%=%-w%{Rk}%1`%{-}%{Wr}[%n %t]%{-} %+w%=ALT%{Yk} | [%m/%d %c]'^M"
+register d "\017:caption string '%{Yk}[%l] |%{w}%=%-w%{Rk}%1`%{-}%{Wr}[%n %t]%{-} %+w%=>>>%{Yk} | [%m/%d %c]'^M"
+
+# Window numbering starts at 1, not 0.
+bind c screen 1
+bind ^c screen 1
+bind 0 select 10
+screen 1
