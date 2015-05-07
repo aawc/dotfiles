@@ -172,7 +172,7 @@ syntax on
 "highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 set textwidth=80
-set colorcolumn=+1
+set colorcolumn=+2
 "highlight ColorColumn guibg=#2d2d2d ctermbg=246
 
 " don't indent public: private: or protected:
