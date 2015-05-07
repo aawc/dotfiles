@@ -8,8 +8,8 @@ startup_message off
 bind k
 bind K kill
 
-# change the prefix to CTRL-b
-escape ^Bb
+# change the prefix to CTRL-s
+escape ^Ss
 
 hardstatus on
 hardstatus alwayslastline
