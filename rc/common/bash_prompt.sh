@@ -88,7 +88,7 @@ function pretty_pwd() {
   if [[ -n "${gitDirectory}" ]]; then
     local gitBranch="$(parse_git_branch)"
     pwd=${pwd/${HOME}\/work\/git\//@"\[${red}\]"${gitBranch}"\[${YELLOW}\]"\/}
-    pwd=${pwd/${HOME}\/work\/git2\//@"\[${red}\]"${gitBranch}"\[${YELLOW}\]"\/}
+    pwd=${pwd/${HOME}\/work\/git[0-9]*\//@"\[${red}\]"${gitBranch}"\[${YELLOW}\]"\/}
     pwd=${pwd/${HOME}\/github\//@"\[${red}\]"${gitBranch}"\[${YELLOW}\]" }
   fi
   pwd=${pwd/$HOME/\~}
