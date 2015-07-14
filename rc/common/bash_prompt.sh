@@ -75,6 +75,11 @@ function g4_dir_prefix() {
   echo $PWD | sed -e "s#\(${g4DirCommonPrefix}/${g4Client}\/google3[/]*\).*#\1#"
 }
 
+function git_parent_of_root_dir() {
+  local rootDirectory="$(git rev-parse --show-toplevel 2>/dev/null)"
+  dirname $rootDirectory
+}
+
 function pretty_pwd() {
   local pwd="${PWD}"
   local g4DirCommonPrefix="/google/src/cloud/${USER}"
@@ -84,12 +89,12 @@ function pretty_pwd() {
     pwd="${pwd/${g4DirPrefix}/@${g4Client} }"
   fi
 
-  local gitDirectory="$(echo ${PWD} | grep git)"
-  if [[ -n "${gitDirectory}" ]]; then
+  # Is git directory?
+  git rev-parse --git-dir > /dev/null 2>&1
+  if [[ $? -eq 0 ]]; then
     local gitBranch="$(parse_git_branch)"
-    pwd=${pwd/${HOME}\/work\/git\//@"\[${red}\]"${gitBranch}"\[${YELLOW}\]"\/}
-    pwd=${pwd/${HOME}\/work\/git[0-9]*\//@"\[${red}\]"${gitBranch}"\[${YELLOW}\]"\/}
-    pwd=${pwd/${HOME}\/github\//@"\[${red}\]"${gitBranch}"\[${YELLOW}\]" }
+    local parentOfRoot="$(git_parent_of_root_dir)"
+    pwd=${pwd/${parentOfRoot}\//@"\[${red}\]"${gitBranch}"\[${YELLOW}\] "}
   fi
   pwd=${pwd/$HOME/\~}
   echo $pwd
