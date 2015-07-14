@@ -176,3 +176,21 @@ function gojo ()
   esac
   fi
 }
+
+function strjoin ()
+{
+  local ifs="$1";
+  local output=""
+  shift;
+  for part in "$@"; do
+    output="$output$ifs$part"
+  done
+  echo "${output#${ifs}}"
+}
+
+function weather ()
+{
+  local location="$(strjoin \%20 $*)"
+  curl -s "http://api.openweathermap.org/data/2.5/weather?q=$location&units=metric" \
+    | jq .main.temp | figlet -kcf big
+}

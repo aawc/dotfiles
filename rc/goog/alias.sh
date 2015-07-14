@@ -16,6 +16,7 @@ alias openedg4='g4 opened'
 alias prodaccess='prodaccess -g'
 alias submitg4='g4 submit'
 alias statusg4='g4 status'
+alias vesuvius_running_ports='ps aux | grep vesuvius_server | sed -e "s/.*port.\([0-9]*\).*/\1/" | grep "^[0-9]*$" | sort | uniq'
 
 
 # Directories

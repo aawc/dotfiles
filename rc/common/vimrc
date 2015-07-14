@@ -1,3 +1,6 @@
+imap jk <ESC>
+imap kj <ESC>
+
 " ------------------------------------------------
 " Copied from https://github.com/gmarik/Vundle.vim
 " ------------------------------------------------
@@ -9,7 +12,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 Plugin 'bling/vim-airline'
 Plugin 'groenewege/vim-less'

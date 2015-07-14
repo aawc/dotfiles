@@ -1,4 +1,10 @@
 source /usr/share/vim/google/google.vim
+filetype plugin indent on
+syntax on
+
+" Zapfhahn coverage
+Glug coverage
+Glug coverage-google
 
 " G4 integration
 Glug g4
