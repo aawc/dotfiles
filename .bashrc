@@ -77,6 +77,8 @@ elif [ "${OS}" = "SunOS" ]; then
   SUDO="pfexec";
 fi
 
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 function CD ()
 {
   if [ "${DEBUG_BASH+set}" = "set" ]; then
@@ -140,8 +142,8 @@ PATH=$PATH:${HOME}/bin/Adobe/Reader9/bin
 PATH=$PATH:${HOME}/bin/w
 
 # Remove duplicate path
-export PATH="$(echo "${PATH}" | tr ':' '\n' | sort | uniq | tr '\n' ':')"
-PATH=$PATH/sbin
+PATH="$(echo "${PATH}" | tr ':' '\n' | sort | uniq | tr '\n' ':')"
+export PATH="/usr/local/google/home/vakh/work/chrome/depot_tools:$PATH"
 
 # Misc Variables
 export EDITOR="vim"
@@ -279,3 +281,4 @@ function create_zip()
 
 fi
 #end interactive check
+
