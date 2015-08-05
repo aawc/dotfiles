@@ -146,7 +146,7 @@ PATH=$PATH:/usr/texbin
 
 # Remove duplicate path
 PATH="$(echo "${PATH}" | tr ':' '\n' | sort | uniq | tr '\n' ':')"
-export PATH="/usr/local/google/home/vakh/work/chrome/depot_tools:$PATH"
+export PATH="${HOME}/work/chrome/depot_tools:$PATH"
 
 # Misc Variables
 export EDITOR="vim"
