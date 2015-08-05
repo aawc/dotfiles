@@ -138,6 +138,9 @@ PATH=$PATH:$HOME/bin
 PATH=$PATH:$HOME/scripts
 PATH=$PATH:${HOME}/bin/Adobe/Reader9/bin
 PATH=$PATH:${HOME}/bin/w
+PATH=$PATH:/usr/local/bin
+PATH=$PATH:/usr/local/git/current/bin
+PATH=$PATH:/usr/texbin
 
 # Remove duplicate path
 export PATH="$(echo "${PATH}" | tr ':' '\n' | sort | uniq | tr '\n' ':')"
