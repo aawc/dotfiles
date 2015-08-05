@@ -13,9 +13,10 @@ alias ggvdiff='P4DIFF=vimdiff g4 diff'
 alias gjslint='gjslint --jslint_error=all  --strict --closurized_namespaces=goog'
 alias menu='/home/shine/share/menu/menu.par'
 alias openedg4='g4 opened'
-alias prodaccess='prodaccess -g'
+alias prodaccess='prodaccess -g --corp_ssh'
 alias submitg4='g4 submit'
 alias statusg4='g4 status'
+alias vesuvius_running_ports='ps aux | grep vesuvius_server | sed -e "s/.*port.\([0-9]*\).*/\1/" | grep "^[0-9]*$" | sort | uniq'
 
 
 # Directories
