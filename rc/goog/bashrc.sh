@@ -13,6 +13,11 @@ function run
 
   local ALIAS_FILE="${MY_DIR}/alias.sh"
   includeFile "${ALIAS_FILE}"
+
+  local CHROME_FILE="${MY_DIR}/chrome.sh"
+  includeFile "${CHROME_FILE}"
+
+  export PATH="/usr/local/google/home/vakh/work/chrome/depot_tools:$PATH"
 }
 
 run

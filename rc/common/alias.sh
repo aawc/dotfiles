@@ -2,8 +2,9 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
-alias be="vi ~/.bashrc;source ~/.bashrc"
 alias bash_permanent_history="less ~/.bash_permanent_history"
+alias be="vi ~/.bashrc;source ~/.bashrc"
+alias blaze="nice blaze"
 alias c="clear"
 alias cm='git commit -m'
 alias df="df -h"
