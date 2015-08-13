@@ -11,8 +11,8 @@ Glug g4
 
 " Shows related files
 Glug relatedfiles
-" Brings up the related files. Also try: , fc and ,fh
-Glug relatedfiles plugin[mappings]=',f'
+" Brings up the related files. Also try: ,rc and ,rh
+Glug relatedfiles plugin[mappings]='<leader>r'
 
 " Create a selection window for the active files
 noremap <leader>go :PiperSelectActiveFiles<CR>
@@ -29,6 +29,7 @@ nnoremap <leader>g :GoogleOutlineWindow<CR>
 
 "http://go/buildifier
 let g:auto_buildifier = 1
+autocmd FileType bzl,blazebuild AutoFormatBuffer buildifier
 
 " Open the current file in Chrome:
 nnoremap <leader>cs :!google-chrome --new-window https://cs.corp.google.com\\#%:p:s?.*./google3/?google3/?<CR> <CR>
