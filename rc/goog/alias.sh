@@ -11,7 +11,6 @@ alias ggd='g4d'
 alias ggcdiff='P4DIFF=colordiff g4 diff'
 alias ggvdiff='P4DIFF=vimdiff g4 diff'
 alias gjslint='gjslint --jslint_error=all  --strict --closurized_namespaces=goog'
-alias menu='/home/shine/share/menu/menu.par'
 alias openedg4='g4 opened'
 alias prodaccess='prodaccess -g --corp_ssh'
 alias submitg4='g4 submit'
@@ -21,4 +20,4 @@ alias vesuvius_running_ports='ps aux | grep vesuvius_server | sed -e "s/.*port.\
 
 # Directories
 alias pqoanon='g4d && cd productquality/common/pqoanon/code'
-alias vesuvius='g4d && goto vesuvius'
+alias quarry='g4d && cd productquality/safebrowsing/quarry'
