@@ -9,7 +9,7 @@ alias c="clear"
 alias cm='git commit -m'
 alias df="df -h"
 
-alias gh='cd ${HOME}/github'
+alias gh='cd ${HOME}/git/hub'
 
 alias l="ls"
 alias s="ls"

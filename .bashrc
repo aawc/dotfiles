@@ -140,10 +140,13 @@ PATH=$PATH:$HOME/bin
 PATH=$PATH:$HOME/scripts
 PATH=$PATH:${HOME}/bin/Adobe/Reader9/bin
 PATH=$PATH:${HOME}/bin/w
+PATH=$PATH:/usr/local/bin
+PATH=$PATH:/usr/local/git/current/bin
+PATH=$PATH:/usr/texbin
 
 # Remove duplicate path
 PATH="$(echo "${PATH}" | tr ':' '\n' | sort | uniq | tr '\n' ':')"
-export PATH="/usr/local/google/home/vakh/work/chrome/depot_tools:$PATH"
+export PATH="${HOME}/work/chrome/depot_tools:$PATH"
 
 # Misc Variables
 export EDITOR="vim"
