@@ -9,6 +9,11 @@ Glug coverage-google
 " G4 integration
 Glug g4
 
+" Shows related files
+Glug relatedfiles
+" Brings up the related files. Also try: , fc and ,fh
+Glug relatedfiles plugin[mappings]=',f'
+
 " Create a selection window for the active files
 noremap <leader>go :PiperSelectActiveFiles<CR>
 nnoremap <leader>gc :CritiqueComments<CR>
