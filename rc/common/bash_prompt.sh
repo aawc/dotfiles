@@ -94,6 +94,10 @@ function pretty_pwd() {
   if [[ $? -eq 0 ]]; then
     local gitBranch="$(parse_git_branch)"
     local parentOfRoot="$(git_parent_of_root_dir)"
+    local re="(${parentOfRoot}\/.*\/google3[\/])(.*)"
+    if [[ $pwd =~ $re ]]; then
+      pwd=${pwd/${BASH_REMATCH[1]}/@"\[${red}\]"${gitBranch}"\[${YELLOW}\] "}
+    fi
     pwd=${pwd/${parentOfRoot}\//@"\[${red}\]"${gitBranch}"\[${YELLOW}\] "}
   fi
   pwd=${pwd/$HOME/\~}
