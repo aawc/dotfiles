@@ -12,7 +12,7 @@ function InstallDotFiles
     if [ -f "${filepath_git}" -o -d "${filepath_git}" ];
     then
       local filepath_home="${HOME}/${TARGET}"
-      ln -svih "${filepath_git}" "${filepath_home}"
+      ln -svi "${filepath_git}" "${filepath_home}"
     fi
   done
 
