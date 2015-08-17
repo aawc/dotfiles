@@ -30,6 +30,7 @@ alias psa="ps aux"
 alias rl="source ${HOME}/.bashrc"
 alias ve="vi ~/.vimrc"
 alias vi="vim"
+alias vim="vim --servername vim"
 alias md='mkdir'
 alias rf='rm -rf'
 alias dir='echo "" ; find * -follow -maxdepth 0 -type d -printf "%f/ " ; echo;echo;'

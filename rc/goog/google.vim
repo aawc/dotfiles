@@ -4,6 +4,7 @@ syntax on
 
 " Zapfhahn coverage
 Glug coverage
+Glug coverage uncovered_text=':(' covered_text=':)' partial_text=':|'
 Glug coverage-google
 
 " G4 integration
