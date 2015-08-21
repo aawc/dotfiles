@@ -5,7 +5,7 @@ function InstallDotFiles
   local git_dir="$(GetGitRepoPath ${0})"
   local old_extension=".OLD"
 
-  for TARGET in .bashrc .gitconfig .gitignore .pdbrc .pylintrc .screenrc \
+  for TARGET in .bashrc .gdbinit .gitconfig .gitignore .pdbrc .pylintrc .screenrc \
     .vimrc rc
   do
     local filepath_git="${git_dir}/${TARGET}"
