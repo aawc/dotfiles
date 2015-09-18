@@ -3,10 +3,13 @@
 function LockScreen
 {
   local desktopEnv="`echo $XDG_CURRENT_DESKTOP | tr '[:upper:]' '[:lower:]'`"
+  if [[ -z $desktopEnv ]]; then
+      desktopEnv="`w | grep ' :0.* :0' | tr '[:upper:]' '[:lower:]'`"
+  fi
   if [[ $desktopEnv =~ "cinnamon" ]]; then
-    bash -c "cinnamon-screensaver-command -l; xset dpms force off;"
+    export DISPLAY=:0 && cinnamon-screensaver-command -a && xset dpms force off;
   elif [[ $desktopEnv =~ "gnome" ]]; then
-    DISPLAY=:0 gnome-screensaver-command -l
+    export DISPLAY=:0 && gnome-screensaver-command -l && xset dpms force off;
   fi
 }
 
