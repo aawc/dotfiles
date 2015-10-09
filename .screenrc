@@ -8,6 +8,10 @@ startup_message off
 bind k
 bind K kill
 
+# rebind 'lock window' from 'x' to 'X'
+bind x
+bind X lockscreen
+
 backtick 1 0 5 sh -c "if [ -d /google/src -a ! -d /google/src/cloud ]; then echo '[!]'; else echo ''; fi"
 
 # Scroll back to 30000 lines.
@@ -45,4 +49,10 @@ register d "\017:caption string '%{Yk}[%l] |%{w}%=%-w%{Rk}%1`%{-}%{Wr}[%n %t]%{-
 bind c screen 1
 bind ^c screen 1
 bind 0 select 10
-screen 1
+
+screen -t :g 1
+screen -t src 2
+screen -t test 3
+screen -t b/r 4
+
+altscreen on
