@@ -15,6 +15,7 @@ function InstallDotFiles
       ln -svi "${filepath_git}" "${filepath_home}"
     fi
   done
+  ln -svi "${git_dir}/rc/common/.vim/colors/" "${HOME}/.vim/"
 
   echo "Now run: ln -s ${git_dir}/rc/<appropriate_directory> $(hostname)"
   echo "  where appropriate_directory matches your machine most closely"
