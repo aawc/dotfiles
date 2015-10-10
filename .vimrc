@@ -249,3 +249,4 @@ endif
 
 colorscheme elflord
 set background=dark
+colorscheme badwolf         " awesome colorscheme
