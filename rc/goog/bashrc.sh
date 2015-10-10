@@ -8,6 +8,9 @@ function run
   local COMMON_BASH_RC="${COMMON_DIR}/bashrc.sh"
   includeFile "${COMMON_BASH_RC}"
 
+  local EXPORTS_FILE="${MY_DIR}/exports.sh"
+  includeFile "${EXPORTS_FILE}"
+
   local FUNCTIONS_FILE="${MY_DIR}/functions.sh"
   includeFile "${FUNCTIONS_FILE}"
 
