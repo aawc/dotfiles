@@ -11,6 +11,17 @@ set number "Enable line numbering, taking up 6 spaces
 set wrap!
 set hlsearch
 
+" Redraw only when we need to.
+set lazyredraw
+
+" Move to beginning/end of line
+nnoremap B ^
+nnoremap E $
+
+" $/^ doesn't do anything
+nnoremap $ <nop>
+nnoremap ^ <nop>
+
 "Turn on smart indent
 set smartindent
 set tabstop=2 "set tab character to 4 characters
