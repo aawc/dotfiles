@@ -73,8 +73,9 @@ if has('gui_running')
   set guifont=Monospace\ 10  " use this font
   set guioptions-=T "Hide toolbar
 else
-  "colorscheme elflord    " use this color scheme
-  "set background=dark        " adapt colors for background
+  "colorscheme elflord
+  colorscheme badwolf         " awesome colorscheme
+  set background=dark
 endif
 
 "set autowrite      "VK: Write the buffer to disk when switching buffers
@@ -246,7 +247,3 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
         \| exe "normal! g'\"" | endif
 endif
-
-colorscheme elflord
-set background=dark
-colorscheme badwolf         " awesome colorscheme
