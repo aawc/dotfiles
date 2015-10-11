@@ -8,6 +8,9 @@ function run
   local GOOG_BASH_RC="${GOOG_DIR}/bashrc.sh"
   includeFile "${GOOG_BASH_RC}"
 
+  local ALIAS_FILE="${MY_DIR}/alias.sh"
+  includeFile "${ALIAS_FILE}"
+
   local FUNCTIONS_FILE="${MY_DIR}/functions.sh"
   includeFile "${FUNCTIONS_FILE}"
 
