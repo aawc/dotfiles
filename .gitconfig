@@ -1,4 +1,5 @@
 [alias]
+  branches = map-branches -vv
   cm = commit -m
   f = "!git ls-files | grep -i"
   l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
