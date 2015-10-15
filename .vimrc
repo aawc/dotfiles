@@ -73,8 +73,8 @@ if has('gui_running')
   set guifont=Monospace\ 10  " use this font
   set guioptions-=T "Hide toolbar
 else
-  "colorscheme elflord
-  colorscheme badwolf         " awesome colorscheme
+  colorscheme elflord
+  "colorscheme badwolf         " awesome colorscheme
   set background=dark
 endif
 
