@@ -8,6 +8,7 @@ alias blaze="nice blaze"
 alias c="clear"
 alias cm='git commit -m'
 alias df="df -h"
+alias dotfiles='cd ${HOME}/git/hub/aawc/dotfiles'
 
 alias gh='cd ${HOME}/git/hub'
 
