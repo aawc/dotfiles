@@ -32,3 +32,7 @@ filetype plugin indent on     " required
 " Now close,re-open vim and run :PluginInstall
 " ----
 exec ":source $HOME" . "/rc/common/easymotion.vimrc"
+
+" Save the state of folds on close and reload on launch.
+au BufWinLeave * mkview
+au BufWinEnter * silent loadview
