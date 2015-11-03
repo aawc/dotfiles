@@ -15,10 +15,12 @@ function InstallDotFiles
       ln -svi "${filepath_git}" "${filepath_home}"
     fi
   done
+  rm -v "${HOME}/rc/rc" 2>/dev/null
   ln -svi "${git_dir}/rc/common/.vim/colors/" "${HOME}/.vim/"
 
   local lower_os="$(uname | tr [A-Z] [a-z])"
-  ln -svi "${git_dir}/rc/${lower_os}" $(hostname)"
+  ln -svi "${git_dir}/rc/${lower_os}" "${git_dir}/rc/$(hostname)"
+  rm -v "${git_dir}/rc/${lower_os}/${lower_os}" 2>/dev/null
 }
 
 function GetGitRepoPath
