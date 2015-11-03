@@ -1,1 +1,1 @@
-osx
+darwin
