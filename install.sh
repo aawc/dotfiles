@@ -6,7 +6,7 @@ function InstallDotFiles
   local old_extension=".OLD"
 
   for TARGET in .bashrc .gdbinit .gitconfig .gitignore .pdbrc .pylintrc .screenrc \
-    .vimrc rc
+    .tmux.conf .vimrc rc
   do
     local filepath_git="${git_dir}/${TARGET}"
     if [ -f "${filepath_git}" -o -d "${filepath_git}" ];
