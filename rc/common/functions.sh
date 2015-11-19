@@ -71,7 +71,7 @@ function remux
   else
     local numberOfMatchingMuxsFound="$(echo ${intendedMuxName} | wc -w)"
     if [ "${numberOfMatchingMuxsFound}" -eq 1 ]; then
-      tmux attach -t "${intendedMuxName}"
+      tmux attach -d -t "${intendedMuxName}"
     else
       printf "Found too many muxs:\n%s\n" "${intendedMuxName}"
     fi
