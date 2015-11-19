@@ -39,6 +39,45 @@ function rescreen
   fi
 }
 
+function remux
+{
+  local muxName="${1}"
+  local runningMuxs="$(tmux list-sessions 2>/dev/null | cut -f1 -d:)"
+
+  if [ -z "${muxName}" ]; then
+    if [ -z "${runningMuxs}" ]; then
+      printf "No muxs running.\n"
+      return
+    fi
+
+    printf "Found the following muxs running:\n${runningMuxs}\n"
+    return
+  fi
+
+  local intendedMuxName="$(echo ${runningMuxs} | tr ' ' '\n' | grep -i "${muxName}")"
+  if [ -z "${intendedMuxName}" ]; then
+    printf "Mux %s not found.\n" $muxName
+    if [ -n "${runningMuxs}" ]; then
+      printf "Found the following muxs running:\n${runningMuxs}\n"
+    fi
+    local startMux="N"
+    read -r -p "Want to start a session named '${muxName}'? [y/N]: " startMux
+    case "${startMux}" in
+      [yY][eE][sS]|[yY])
+        tmux new -s "${muxName}";;
+      *)
+        ;;
+    esac
+  else
+    local numberOfMatchingMuxsFound="$(echo ${intendedMuxName} | wc -w)"
+    if [ "${numberOfMatchingMuxsFound}" -eq 1 ]; then
+      tmux attach -t "${intendedMuxName}"
+    else
+      printf "Found too many muxs:\n%s\n" "${intendedMuxName}"
+    fi
+  fi
+}
+
 function epoch(){
   [[ -z "${1}" ]] || date -d @"${1}"
 }
