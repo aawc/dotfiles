@@ -5,23 +5,27 @@ function InstallDotFiles
   local git_dir="$(GetGitRepoPath ${0})"
   local old_extension=".OLD"
 
-  for TARGET in .bashrc .gdbinit .gitconfig .gitignore .pdbrc .pylintrc .screenrc \
-    .tmux.conf .vimrc .config/powerline rc
+  for TARGET in .bashrc .config/powerline .gdbinit .gitconfig .gitignore \
+    .pdbrc .pylintrc .screenrc .tmux.conf .tmuxinator .vimrc .vim/colors rc
   do
     local filepath_git="${git_dir}/${TARGET}"
     if [ -f "${filepath_git}" -o -d "${filepath_git}" ];
     then
       local filepath_home="${HOME}/${TARGET}"
-      mkdir -p -v $(basename "${filepath_home}")
-      ln -svi "${filepath_git}" "${filepath_home}"
+      local filename="$(basename ${TARGET})"
+      if [[ ! -e "${filepath_home}" ]]; then
+        mkdir -p -v "$(dirname ${filepath_home})"
+        ln -svi "${filepath_git}" "${filepath_home}"
+      fi
     fi
   done
-  rm -v "${HOME}/rc/rc" 2>/dev/null
-  ln -svi "${git_dir}/rc/common/.vim/colors/" "${HOME}/.vim/"
 
-  local lower_os="$(uname | tr [A-Z] [a-z])"
-  ln -svi "${git_dir}/rc/${lower_os}" "${git_dir}/rc/$(hostname)"
-  rm -v "${git_dir}/rc/${lower_os}/${lower_os}" 2>/dev/null
+  local hostname="$(hostname)"
+  local os_dir_path="${git_dir}/rc/${hostname}"
+  if [[ ! -e "${os_dir_path}" ]]; then
+    local lower_os="$(uname | tr [A-Z] [a-z])"
+    ln -svi "${git_dir}/rc/${lower_os}" "${os_dir_path}"
+  fi
 }
 
 function GetGitRepoPath
