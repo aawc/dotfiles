@@ -56,11 +56,11 @@ function power_prompt()
 }
 
 function parse_git_dirty() {
-  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]] && echo "*"
+  [[ -n $(git status --porcelain 2> /dev/null) ]] && echo "*"
 }
 
 function parse_git_branch() {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
+  echo "$(git rev-parse --abbrev-ref HEAD)$(parse_git_dirty)"
 }
 
 function g4_client() {
