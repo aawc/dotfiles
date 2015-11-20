@@ -35,4 +35,4 @@ windows:
         -
         -
   - test: export DISPLAY=:20.0; source ~/rc/goog/use_goma.sh
-  - b/r: export DISPLAY=:20.0;source ~/rc/goog/use_goma.sh
+  - b/r: export DISPLAY=:20.0; source ~/rc/goog/use_goma.sh
