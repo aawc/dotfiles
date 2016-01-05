@@ -42,15 +42,13 @@ function power_prompt()
   if [ "$UID" -eq 0 ]; then
     promptTextColor="${red}"
   fi
-  local prompColor="${white}"
   local prodaccessStatus=""
   if is_prodaccess_missing ; then
-    prodaccessStatus="$(prodaccess_missing_message) "
-    prompColor="${RED}"
+    prodaccessStatus="\[${RED}\]$(prodaccess_missing_message)"
   fi
   PS1="[\[$HOST_COLOR\]\$(date +%H:%M:%S)\[${NC}\]]"
   PS1="$PS1[\[${promptTextColor}\]\u@\h\[$NC\]: \[$YELLOW\]$(pretty_pwd)\[$NC\]]"
-  PS1="$PS1[\#]\[${prompColor}\]\$ ${prodaccessStatus}\[$NC\]"
+  PS1="$PS1[\#]${prodaccessStatus}\[$NC\]\$ "
 
   PS2="\[$WHILE\]=>\[$NC\]"
 }
