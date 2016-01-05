@@ -21,7 +21,7 @@ function is_prodaccess_missing
 
 function prodaccess_missing_message
 {
-  echo "(prodaccess missing)"
+  echo "[!]"
 }
 
 function git_cleanup_clients
