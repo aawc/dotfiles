@@ -84,7 +84,7 @@ function pretty_pwd() {
   local g4Client="$(g4_client ${g4DirCommonPrefix})"
   if [[ -n "${g4Client}" ]]; then
     local g4DirPrefix="$(g4_dir_prefix ${g4DirCommonPrefix} ${g4Client})"
-    pwd="${pwd/${g4DirPrefix}/@${g4Client} }"
+    pwd=${pwd/${g4DirPrefix}/"\[${red}\]"${g4Client}"\[${YELLOW}\] "}
   fi
 
   # Is git directory?
@@ -94,9 +94,9 @@ function pretty_pwd() {
     local parentOfRoot="$(git_parent_of_root_dir)"
     local re="(${parentOfRoot}\/.*\/google3[\/])(.*)"
     if [[ $pwd =~ $re ]]; then
-      pwd=${pwd/${BASH_REMATCH[1]}/@"\[${red}\]"${gitBranch}"\[${YELLOW}\] "}
+      pwd=${pwd/${BASH_REMATCH[1]}/"\[${red}\]"${gitBranch}"\[${YELLOW}\] "}
     fi
-    pwd=${pwd/${parentOfRoot}\//@"\[${red}\]"${gitBranch}"\[${YELLOW}\] "}
+    pwd=${pwd/${parentOfRoot}\//"\[${red}\]"${gitBranch}"\[${YELLOW}\] "}
   fi
   pwd=${pwd/$HOME/\~}
   echo $pwd
