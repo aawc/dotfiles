@@ -30,3 +30,5 @@
 [user]
   email = ca.aawc@yahoo.com
   name = Varun Khaneja
+[http]
+	cookiefile = /usr/local/google/home/vakh/.gitcookies
