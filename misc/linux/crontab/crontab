@@ -1,3 +1,3 @@
-35 17 * * * "${HOME}/github/dotfiles/misc/scripts/leaveWork.sh"
-00 09 * * * "${HOME}/github/dotfiles/misc/scripts/comeInToWork.sh"
-00 09 * * * "${HOME}/github/dotfiles/misc/scripts/emailOnPageChange.sh"
+00 09 * * * "${HOME}/git/hub/aawc/dotfiles/misc/scripts/comeInToWork.sh"
+40 17 * * * "${HOME}/git/hub/aawc/dotfiles/misc/scripts/leaveWork.sh"
+*/2 * * * * export DISPLAY=:0 && "${HOME}/git/hub/aawc/dotfiles/misc/scripts/turn-screen-off-on-lock.sh"
