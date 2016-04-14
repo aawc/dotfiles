@@ -138,9 +138,6 @@ export GREP_COLOR='1;37;41'
 PATH=$PATH:/usr/local/sbin:/usr/sbin
 PATH=$PATH:$HOME/bin
 PATH=$PATH:$HOME/.local/bin
-PATH=$PATH:$HOME/scripts
-PATH=$PATH:${HOME}/bin/Adobe/Reader9/bin
-PATH=$PATH:${HOME}/bin/w
 PATH=$PATH:/usr/local/git/current/bin
 PATH=$PATH:/usr/texbin
 
