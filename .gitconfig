@@ -3,6 +3,7 @@
   cm = commit -m
   f = "!git ls-files | grep -i"
   l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  lastcommit = rev-parse HEAD
   ll = log --stat --abbrev-commit
   s = status -sb
 
@@ -15,7 +16,6 @@
   excludesfile = ~/.gitignore
 
 [credential]
-  helper = osxkeychain
   helper = corpsso
 
 [diff]
