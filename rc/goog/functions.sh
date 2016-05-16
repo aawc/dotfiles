@@ -40,3 +40,17 @@ function git_cleanup_clients
     echo;
   done
 }
+
+function git_commit_all_and_upload_and_try
+{
+  if [ $# -eq 0 ]; then
+    printf "Commit message missing! Exiting.\n"
+  fi
+
+  local commit_message="${1}"
+  set -x;
+  git commit -m "${commit_message}" -a && \
+    git cl upload -m "${commit_message}" && \
+    git cl try
+  set +x;
+}
