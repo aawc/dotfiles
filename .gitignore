@@ -55,3 +55,6 @@ _ReSharper.*
 *.resharper
 *.resharper.user
 *.csproj.user
+
+#VSCode
+.vscode
