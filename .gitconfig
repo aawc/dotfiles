@@ -1,4 +1,5 @@
 [alias]
+  alias = config --get-regexp alias
   branches = map-branches -vv
   cm = commit -m
   f = "!git ls-files | grep -i"
