@@ -139,7 +139,6 @@ PATH=$PATH:/usr/local/sbin:/usr/sbin
 PATH=$PATH:$HOME/bin
 PATH=$PATH:$HOME/.local/bin
 PATH=$PATH:/usr/local/git/current/bin
-PATH=$PATH:/usr/texbin
 
 # Remove duplicate path
 PATH="$(echo "${PATH}" | tr ':' '\n' | sort | uniq | tr '\n' ':')"
