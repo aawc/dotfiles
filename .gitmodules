@@ -1,0 +1,3 @@
+[submodule "extras/aawc/screen-config"]
+	path = extras/aawc/screen-config
+	url = git@github.com:aawc/screen-config.git
