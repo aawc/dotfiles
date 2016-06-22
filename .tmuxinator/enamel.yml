@@ -1,6 +1,6 @@
 # ~/.tmuxinator/enamel.yml
 
-name: enamel
+name: _enamel_
 root: ~/work/chrome/src
 
 # Optional tmux socket
@@ -28,11 +28,23 @@ root: ~/work/chrome/src
 # post: tmux -CC attach -t enamel
 
 windows:
-  - g:
+  - git:
+  - b/r: export DISPLAY=:20.0; echo source ~/rc/goog/use_goma.sh
+  - gn:  export DISPLAY=:20.0; echo source ~/rc/goog/use_goma.sh
+  - db:
+      layout: main-vertical
+      panes:
+        - cd components/safe_browsing_db
+        - cd components/safe_browsing_db
+  - db2:
+      layout: main-vertical
+      panes:
+        - cd components/safe_browsing_db
+        - cd components/safe_browsing_db
   - src:
       layout: main-vertical
       panes:
         -
         -
-  - test: export DISPLAY=:20.0; source ~/rc/goog/use_goma.sh
-  - b/r: export DISPLAY=:20.0; source ~/rc/goog/use_goma.sh
+  - gyp: export DISPLAY=:20.0; echo source ~/rc/goog/use_goma.sh
+  - log:
