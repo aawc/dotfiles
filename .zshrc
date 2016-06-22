@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/usr/local/google/home/vakh/.oh-my-zsh
+  export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -82,6 +82,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+[ -f $ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source $ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
