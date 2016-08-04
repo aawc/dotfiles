@@ -58,3 +58,6 @@ _ReSharper.*
 
 #VSCode
 .vscode
+
+#CTags
+.tags
