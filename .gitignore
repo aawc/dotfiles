@@ -62,3 +62,7 @@ _ReSharper.*
 #CTags
 .tags
 .tags_sorted_by_file
+
+# fish shell
+fishd.*
+fish_history
