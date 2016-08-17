@@ -1,4 +1,5 @@
-abbr -a gco git checkout
-abbr -a g git
+abbr -a g 'git'
+abbr -a gco 'git checkout'
 abbr -a rf 'rm -rfI'
+abbr -a s 'ls'
 abbr -a vv 'git branches -vv'
