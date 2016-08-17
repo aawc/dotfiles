@@ -35,4 +35,4 @@ function fish_prompt
   set_color normal
 end
 
-. ~/.config/fish/aliases.fish
+source ~/.config/fish/abbrs.fish
