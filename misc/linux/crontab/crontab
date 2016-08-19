@@ -1,3 +1,4 @@
 00 09 * * * "${HOME}/git/hub/aawc/dotfiles/misc/scripts/comeInToWork.sh"
 40 17 * * * "${HOME}/git/hub/aawc/dotfiles/misc/scripts/leaveWork.sh"
 */2 * * * * export DISPLAY=:0 && "${HOME}/git/hub/aawc/dotfiles/misc/scripts/turn-screen-off-on-lock.sh"
+*/2 * * * * "${HOME}/git/hub/aawc/dotfiles/misc/scripts/rebuildCtags.sh"
