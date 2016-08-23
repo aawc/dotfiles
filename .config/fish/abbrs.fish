@@ -1,5 +1,6 @@
 abbr -a g 'git'
 abbr -a gco 'git checkout'
+abbr -a md 'mkdir -p'
 abbr -a rf 'rm -rfIv'
 abbr -a rl 'source ~/.config/fish/config.fish'
 abbr -a s 'ls'

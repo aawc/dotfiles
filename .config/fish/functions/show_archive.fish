@@ -3,15 +3,15 @@ function show_archive --description "List contents of compressed files"
     if test -f $file
       echo -s "Listing: " (set_color --bold blue) $file (set_color normal)
       switch $file
-        case *.tar
+        case "*.tar"
           tar -tf $file
-        case *.tar.bz2 *.tbz2
+        case "*.tar.bz2" "*.tbz2"
           bunzip2 -c $file | tar -tf - --
-        case *.tar.gz *.tgz
+        case "*.tar.gz" "*.tgz"
           tar -ztf $file
-        case *.zip *.ZIP
+        case "*.ZIP" "*.zip"
           unzip -l $file
-        case '*'
+        case "*"
           echo "Extension not recognized, cannot list contents of $file"
       end
     else
