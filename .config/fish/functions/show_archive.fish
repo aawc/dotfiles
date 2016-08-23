@@ -11,15 +11,6 @@ function show_archive --description "List contents of compressed files"
           tar -ztf $file
         case *.zip *.ZIP
           unzip -l $file
-        case *.bz2
-          bunzip2 $file
-          # Can also use: bzip2 -d $file
-        case *.gz
-          gunzip $file
-        case *.rar
-          unrar x $file
-        case *.pax
-          pax -r < $file
         case '*'
           echo "Extension not recognized, cannot list contents of $file"
       end
