@@ -1,3 +1,4 @@
+abbr -a chex 'chmod +x'
 abbr -a g 'git'
 abbr -a gco 'git checkout'
 abbr -a md 'mkdir -p'
