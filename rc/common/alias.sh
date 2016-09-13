@@ -6,6 +6,7 @@ alias bash_permanent_history="less ~/.bash_permanent_history"
 alias be="vi ~/.bashrc;source ~/.bashrc"
 alias blaze="nice blaze"
 alias c="clear"
+alias cinnamon-restart='cinnamon –replace -d :0.0 > /dev/null 2>&1 &'
 alias cm='git commit -m'
 alias df="df -h"
 alias dotfiles='cd ${HOME}/git/hub/aawc/dotfiles'
