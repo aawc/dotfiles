@@ -27,10 +27,19 @@ function fish_prompt
   set last_status $status
 
   set_color $fish_color_cwd
-  printf '%s' (prompt_pwd)
+  printf '%s ' (prompt_pwd)
   set_color normal
 
+  set_color -o 586e75
+  printf '%s' (date "+%H:%M:%S")
+  set_color normal
   printf '%s ' (__fish_git_prompt)
+  if [ $last_status -ne 0 ]
+    set_color $fish_color_error
+    printf '[%s] ' $last_status
+    set_color normal
+    set -ge status
+  end
 
   set_color normal
 end
