@@ -23,6 +23,7 @@
 
 [diff]
   tool = vimdiff
+#  external = /usr/local/google/home/vakh/rc/common/diff.py
 
 [help]
   autocorrect = 1
