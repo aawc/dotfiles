@@ -14,12 +14,14 @@ function extract_archive --description "Extract from compressed files"
           # Can also use: bzip2 -d $file
         case "*.gz"
           gunzip $file
-        case "*.rar"
-          unrar x $file
-        case "*.zip"
-          unzip -uo $file -d (basename $file .zip)
         case "*.pax"
           pax -r < $file
+        case "*.rar"
+          unrar x $file
+        case "*.xz"
+          tar -xJf $file
+        case "*.zip"
+          unzip -uo $file -d (basename $file .zip)
         case "*"
           echo "Extension not recognized, cannot extract $file"
       end
