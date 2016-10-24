@@ -45,3 +45,5 @@ function fish_prompt
 end
 
 source ~/.config/fish/abbrs.fish
+
+set -x PATH $PATH $HOME/src/depot_tools
