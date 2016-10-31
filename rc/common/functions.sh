@@ -50,6 +50,23 @@ function rescreen
   fi
 }
 
+function __newTmuxSession__
+{
+  local muxName="${1}"
+  local tmuxinatorSessions="$(tmuxinator list 2>/dev/null | grep ${muxName})"
+  if [ -n "${tmuxinatorSessions}" ]; then
+    if [ $(wc -l <<< "${tmuxinatorSessions}") -eq "1" ]; then
+      tmuxinator "${tmuxinatorSessions}"
+    else
+      # Untested
+      printf "Too many matching projects found:\n${tmuxinatorSessions}\n"
+    fi
+  else
+    # tmuxinator is either not installed or the project isn't available.
+    tmux new -s "${muxName}"
+  fi
+}
+
 function remux
 {
   local muxName="${1}"
@@ -75,7 +92,8 @@ function remux
     read -r -p "Want to start a session named '${muxName}'? [y/N]: " startMux
     case "${startMux}" in
       [yY][eE][sS]|[yY])
-        tmux new -s "${muxName}";;
+        __newTmuxSession__ "${muxName}"
+        ;;
       *)
         ;;
     esac
