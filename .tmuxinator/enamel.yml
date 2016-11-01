@@ -29,22 +29,11 @@ root: ~/work/chrome/src
 
 windows:
   - git:
-  - b/r: export DISPLAY=:20.0; echo source ~/rc/goog/use_goma.sh
-  - gn:  export DISPLAY=:20.0; echo source ~/rc/goog/use_goma.sh
-  - db:
-      layout: main-vertical
-      panes:
-        - cd components/safe_browsing_db
-        - cd components/safe_browsing_db
-  - db2:
-      layout: main-vertical
-      panes:
-        - cd components/safe_browsing_db
-        - cd components/safe_browsing_db
+  - r: export DISPLAY=:20.0; . ~/rc/goog/use_goma.fish
+  - gn:  export DISPLAY=:20.0; . ~/rc/goog/use_goma.fish
+  - db:  cd components/safe_browsing_db
+  - db2: cd components/safe_browsing_db
   - src:
-      layout: main-vertical
-      panes:
-        -
-        -
-  - gyp: export DISPLAY=:20.0; echo source ~/rc/goog/use_goma.sh
+  - proto:
   - log:
+  - profile: mkdir -p /tmp/profile/Safe\ Browsing; cd /tmp/profile/Safe\ Browsing
