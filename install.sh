@@ -5,9 +5,23 @@ function InstallDotFiles
   local git_dir="$(GetGitRepoPath ${0})"
   local old_extension=".OLD"
 
-  for TARGET in .bashrc .config/fish .config/powerline .gdbinit .gitconfig \
-    .gitignore .pdbrc .pylintrc .screenrc .tmux.conf .tmuxinator .vimrc \
-    .vim/colors .zshrc rc
+  for TARGET in \
+    .bashrc \
+    .config/fish \
+    .config/powerline \
+    .config/sublime-text-3/Packages/User \
+    .gdbinit \
+    .gitconfig \
+    .gitignore \
+    .pdbrc \
+    .pylintrc \
+    .screenrc \
+    .tmux.conf \
+    .tmuxinator \
+    .vimrc \
+    .vim/colors \
+    .zshrc \
+    rc
   do
     local filepath_git="${git_dir}/${TARGET}"
     if [ -f "${filepath_git}" -o -d "${filepath_git}" ];
