@@ -7,26 +7,27 @@ imap kj <ESC>
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
+" Plug vim-plug
+call plug#begin('~/.vim/plugged')
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plug 'gmarik/Vundle.vim'
 
-Plugin 'bling/vim-airline'
-Plugin 'groenewege/vim-less'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'majutsushi/tagbar'
-Plugin 'skammer/vim-css-color'
-Plugin 'Valloric/MatchTagAlways'
+Plug 'bling/vim-airline'
+Plug 'groenewege/vim-less'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'majutsushi/tagbar'
+Plug 'skammer/vim-css-color'
+Plug 'Valloric/MatchTagAlways'
 
-Plugin 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript'
 let javascript_enable_domhtmlcss=1
 let g:javascript_conceal=1
 
-filetype plugin indent on     " required
+" Initialize plugin system
+call plug#end()
+
 " ----
 " DONE
 " Now close,re-open vim and run :PluginInstall
