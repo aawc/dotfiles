@@ -66,3 +66,9 @@ _ReSharper.*
 # fish shell
 fishd.*
 fish_history
+
+# vim
+.vim/view
+
+# vim-plugged
+.vim/plugged

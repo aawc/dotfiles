@@ -19,7 +19,7 @@ function InstallDotFiles
     .tmux.conf \
     .tmuxinator \
     .vimrc \
-    .vim/colors \
+    .vim \
     .zshrc \
     rc
   do
