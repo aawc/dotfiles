@@ -14,11 +14,15 @@ call plug#begin('~/.vim/plugged')
 Plug 'gmarik/Vundle.vim'
 
 Plug 'bling/vim-airline'
+Plug 'chrisbra/vim-diff-enhanced'
 Plug 'groenewege/vim-less'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'majutsushi/tagbar'
+Plug 'roryokane/detectindent'
 Plug 'skammer/vim-css-color'
+Plug 'tmux-plugins/vim-tmux'
+Plug 'tpope/vim-fugitive' | let s:fugitive_loaded = 1
 Plug 'Valloric/MatchTagAlways'
 
 Plug 'pangloss/vim-javascript'
@@ -33,6 +37,28 @@ call plug#end()
 " Now close,re-open vim and run :PluginInstall
 " ----
 exec ":source $HOME" . "/rc/common/easymotion.vimrc"
+
+" DetectIndent settings
+augroup DetectIndent
+  autocmd!
+  autocmd BufReadPost * DetectIndent
+augroup END
+
+" Fugitive settings
+if exists('s:fugitive_loaded')
+  nnoremap <silent> <leader>gs  :<C-u>Gstatus<CR>
+  nnoremap <silent> <leader>ga  :<C-u>Gwrite<CR>
+  nnoremap <silent> <leader>gc  :<C-u>Gcommit<CR>
+  nnoremap <silent> <leader>gps :<C-u>Gpush<CR>
+  nnoremap <silent> <leader>gd  :<C-u>Gdiff<CR>
+  nnoremap <silent> <leader>ghh :<C-u>Gdiff HEAD<CR>
+  nnoremap <silent> <leader>gH  :<C-u>Gdiff HEAD<CR>
+  nnoremap <silent> <leader>gh1 :<C-u>Gdiff HEAD~1<CR>
+  nnoremap          <leader>gh  :<C-u>Gdiff HEAD~
+  nnoremap <silent> <leader>gpc :<C-u>Git pc<CR>
+  nnoremap <silent> <leader>gb  :<C-u>Gblame<CR>
+  nnoremap <silent> <leader>gi  :<C-u>GEditIgnore<CR>
+endif
 
 " Save the state of folds on close and reload on launch.
 au BufWinLeave * mkview
