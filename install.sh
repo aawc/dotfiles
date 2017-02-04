@@ -9,6 +9,7 @@ function InstallDotFiles
     .bashrc \
     .config/fish \
     .config/powerline \
+    .config/redshift.conf \
     .config/sublime-text-3/Packages/User \
     .gdbinit \
     .gitconfig \
