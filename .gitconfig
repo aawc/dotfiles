@@ -34,5 +34,7 @@
 [user]
   email = ca.aawc@yahoo.com
   name = Varun Khaneja
+  signingkey = 810D27C6915B44B3
+
 [http]
-	cookiefile = /usr/local/google/home/vakh/.gitcookies
+  cookiefile = /usr/local/google/home/vakh/.gitcookies
