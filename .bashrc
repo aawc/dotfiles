@@ -136,14 +136,14 @@ export GREP_COLOR='1;37;41'
 
 # PATH
 PATH=$PATH:/usr/local/sbin:/usr/sbin
-PATH=$PATH:$HOME/bin
 PATH=$PATH:$HOME/.local/bin
 PATH=$PATH:/usr/local/git/current/bin
 
 # Remove duplicate path
 PATH="$(echo "${PATH}" | tr ':' '\n' | sort | uniq | tr '\n' ':')"
-export PATH="${HOME}/work/chrome/depot_tools:$PATH"
-export PATH="/usr/local/bin:$PATH"
+PATH="${HOME}/work/chrome/depot_tools:${PATH}"
+PATH="/usr/local/bin:${PATH}"
+export PATH="$HOME/bin:${PATH}"
 
 # Misc Variables
 export EDITOR="vim"
