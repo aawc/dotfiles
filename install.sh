@@ -8,12 +8,14 @@ function InstallDotFiles
   for TARGET in \
     .bashrc \
     .config/fish \
+    .config/nvim/init.vim \
     .config/powerline \
     .config/redshift.conf \
     .config/sublime-text-3/Packages/User \
     .gdbinit \
     .gitconfig \
     .gitignore \
+    .local/share/nvim/site/autoload/plug.vim \
     .pdbrc \
     .pylintrc \
     .screenrc \
