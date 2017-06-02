@@ -1,2 +1,4 @@
 source $HOME/rc/goog/google.vim
-source $HOME/rc/goog/ycm.vim
+if !has("nvim")
+  source $HOME/rc/goog/ycm.vim
+endif
