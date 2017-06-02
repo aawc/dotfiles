@@ -1,1 +1,1 @@
-../../rc/common/plug.vimrc
+../../.vimrc
