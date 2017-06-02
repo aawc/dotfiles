@@ -20,9 +20,11 @@ Plug 'roryokane/detectindent'
 Plug 'skammer/vim-css-color'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tpope/vim-fugitive' | let s:fugitive_loaded = 1
-Plug 'Valloric/MatchTagAlways'
-
 Plug 'pangloss/vim-javascript'
+if !has("nvim")
+  Plug 'Valloric/MatchTagAlways'
+endif
+
 let javascript_enable_domhtmlcss=1
 let g:javascript_conceal=1
 
