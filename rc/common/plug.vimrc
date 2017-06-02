@@ -21,7 +21,7 @@ Plug 'skammer/vim-css-color'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tpope/vim-fugitive' | let s:fugitive_loaded = 1
 Plug 'pangloss/vim-javascript'
-if !has("nvim")
+if has("python") || has("python3")
   Plug 'Valloric/MatchTagAlways'
 endif
 
