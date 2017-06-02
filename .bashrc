@@ -138,6 +138,7 @@ export GREP_COLOR='1;37;41'
 PATH=$PATH:/usr/local/sbin:/usr/sbin
 PATH=$PATH:$HOME/.local/bin
 PATH=$PATH:/usr/local/git/current/bin
+PATH=$PATH:$HOME/rc/common/functions
 
 # Remove duplicate path
 PATH="$(echo "${PATH}" | tr ':' '\n' | sort | uniq | tr '\n' ':')"

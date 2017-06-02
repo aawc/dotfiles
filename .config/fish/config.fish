@@ -47,3 +47,4 @@ end
 source ~/.config/fish/abbrs.fish
 
 set -x PATH $PATH $HOME/work/chrome/depot_tools/
+set -x PATH $PATH $HOME/rc/common/functions
