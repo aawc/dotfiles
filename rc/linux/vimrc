@@ -1,4 +1,4 @@
 source $HOME/rc/goog/google.vim
-if !has("nvim")
+if has("python") || has("python3")
   source $HOME/rc/goog/ycm.vim
 endif
