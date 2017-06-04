@@ -38,6 +38,9 @@ set incsearch
 set ignorecase
 set smartcase
 
+" Disable mouse support.
+set mouse-=a
+
 "Informative status line
 "set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\ [%l/%L\ (%p%%)]
 
