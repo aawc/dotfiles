@@ -1,0 +1,10 @@
+#!/bin/bash
+
+CompressPDF() {
+ set -x;
+ gs -sDEVICE=pdfwrite -dNOPAUSE -dQUIET -dBATCH \
+    -dPDFSETTINGS=/${3:-"screen"} -dCompatibilityLevel=1.4 -sOutputFile="$2" "$1"
+ set +x;
+}
+
+CompressPDF "$@"
