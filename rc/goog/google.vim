@@ -1,36 +1,39 @@
-source /usr/share/vim/google/google.vim
-filetype plugin indent on
-syntax on
+let google_vimrc = "/usr/share/vim/google/google.vim"
+if filereadable(google_vimrc)
+  source google_vimrc
+  filetype plugin indent on
+  syntax on
 
-" Zapfhahn coverage
-Glug coverage
-Glug coverage uncovered_text=':(' covered_text=':)' partial_text=':|'
-Glug coverage-google
+  " Zapfhahn coverage
+  Glug coverage
+  Glug coverage uncovered_text=':(' covered_text=':)' partial_text=':|'
+  Glug coverage-google
 
-" G4 integration
-Glug g4
+  " G4 integration
+  Glug g4
 
-" Shows related files
-Glug relatedfiles
-" Brings up the related files. Also try: ,rc and ,rh
-Glug relatedfiles plugin[mappings]='<leader>r'
+  " Shows related files
+  Glug relatedfiles
+  " Brings up the related files. Also try: ,rc and ,rh
+  Glug relatedfiles plugin[mappings]='<leader>r'
 
-" Create a selection window for the active files
-noremap <leader>go :PiperSelectActiveFiles<CR>
-nnoremap <leader>gc :CritiqueComments<CR>
-nnoremap <leader>gC :CritiqueComments!<CR>
+  " Create a selection window for the active files
+  noremap <leader>go :PiperSelectActiveFiles<CR>
+  nnoremap <leader>gc :CritiqueComments<CR>
+  nnoremap <leader>gC :CritiqueComments!<CR>
 
-" Blaze integration
-Glug blaze plugin[mappings]=',b'
+  " Blaze integration
+  Glug blaze plugin[mappings]=',b'
 
-:iabbrev g3/ //depot/google3/
+  :iabbrev g3/ //depot/google3/
 
-Glug outline-window
-nnoremap <leader>g :GoogleOutlineWindow<CR>
+  Glug outline-window
+  nnoremap <leader>g :GoogleOutlineWindow<CR>
 
-"http://go/buildifier
-let g:auto_buildifier = 1
-autocmd FileType bzl,blazebuild AutoFormatBuffer buildifier
+  "http://go/buildifier
+  let g:auto_buildifier = 1
+  autocmd FileType bzl,blazebuild AutoFormatBuffer buildifier
 
-" Open the current file in Chrome:
-nnoremap <leader>cs :!google-chrome --new-window https://cs.corp.google.com\\#%:p:s?.*./google3/?google3/?<CR> <CR>
+  " Open the current file in Chrome:
+  nnoremap <leader>cs :!google-chrome --new-window https://cs.corp.google.com\\#%:p:s?.*./google3/?google3/?<CR> <CR>
+endif
