@@ -6,6 +6,7 @@ function InstallDotFiles
   local old_extension=".OLD"
 
   for TARGET in \
+    .ackrc \
     .bashrc \
     .config/fish \
     .config/nvim/init.vim \
