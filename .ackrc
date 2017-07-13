@@ -1,0 +1,25 @@
+--color
+--context=1
+--follow
+--group
+
+--ignore-dir=log
+--ignore-dir=out
+--ignore-dir=tmp/sass-cache
+--ignore-file=is:.tags
+--ignore-file=match:/_structure\.sql$/
+--ignore-file=match:/\.log$/
+--ignore-file=match:/\.diff$/
+--ignore-file=match:/\.dat$/
+
+--pager=less -R
+
+--smart-case
+--sort-files
+
+--type-add=ruby=.haml,.rake,.rsel,.builder
+--type-set=javascript=.json
+--type-set=markdown=.md,.mdown,.markdown
+--type-set=cucumber=.feature
+--type-set=sass=.sass,.scss
+--type-set=coffee=.coffee
