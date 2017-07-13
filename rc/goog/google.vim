@@ -1,6 +1,5 @@
-let google_vimrc = "/usr/share/vim/google/google.vim"
-if filereadable(google_vimrc)
-  source google_vimrc
+if filereadable("/usr/share/vim/google/google.vim")
+  source "/usr/share/vim/google/google.vim"
   filetype plugin indent on
   syntax on
 
