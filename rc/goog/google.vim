@@ -1,5 +1,5 @@
 if filereadable("/usr/share/vim/google/google.vim")
-  source "/usr/share/vim/google/google.vim"
+  source /usr/share/vim/google/google.vim
   filetype plugin indent on
   syntax on
 
