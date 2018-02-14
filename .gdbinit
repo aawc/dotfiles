@@ -1,5 +1,4 @@
 source ~/rc/common/stl-views.gdb
-source ~/rc/common/colors.gdb
 
 
 # Print a C++ string.
