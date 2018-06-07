@@ -30,10 +30,10 @@ root: ~/work/chrome/src
 windows:
   - git:
   - r: export DISPLAY=:20.0; . ~/rc/goog/use_goma.fish
-  - gn:  export DISPLAY=:20.0; . ~/rc/goog/use_goma.fish
-  - db:  cd components/safe_browsing_db
-  - db2: cd components/safe_browsing_db
+  - test:  export DISPLAY=:20.0; . ~/rc/goog/use_goma.fish
+  - db:  cd components/safe_browsing/db
+  - cosb: cd components/safe_browsing
+  - chbrsb: cd chrome/browser/safe_browsing
   - src:
-  - proto:
   - log:
   - profile: mkdir -p /tmp/profile/Safe\ Browsing; cd /tmp/profile/Safe\ Browsing
