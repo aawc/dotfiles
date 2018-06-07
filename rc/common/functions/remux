@@ -43,7 +43,10 @@ function __remux__
 function __newTmuxSession__
 {
   local muxName="${1}"
-  local tmuxinatorSessions="$(tmuxinator list 2>/dev/null | grep ${muxName})"
+  local tmuxinatorSessions="$(tmuxinator list 2>/dev/null | \
+                              grep -v 'tmuxinator projects:' | \
+                              tr ' ' '\n' | \
+                              grep ${muxName})"
   if [ -n "${tmuxinatorSessions}" ]; then
     if [ $(wc -l <<< "${tmuxinatorSessions}") -eq "1" ]; then
       tmuxinator "${tmuxinatorSessions}"
