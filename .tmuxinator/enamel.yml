@@ -2,6 +2,7 @@
 
 name: _enamel_
 root: ~/work/chrome/src
+startup_pane: 1
 
 # Optional tmux socket
 # socket_name: foo

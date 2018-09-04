@@ -2,6 +2,7 @@
 
 name: _clankium_
 root: ~/work/clankium/src
+startup_pane: 1
 
 # Optional tmux socket
 # socket_name: foo
@@ -28,8 +29,10 @@ root: ~/work/clankium/src
 # post: tmux -CC attach -t enamel
 
 windows:
-  - git:
+  - g:
   - r: export DISPLAY=:20.0; . ~/rc/goog/use_goma.fish
-  - test:  export DISPLAY=:20.0; . ~/rc/goog/use_goma.fish
   - src:
+  - src2:
+  - g_clank: pushd clank
+  - src_clank: pushd clank
   - log:
