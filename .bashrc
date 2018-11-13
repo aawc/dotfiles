@@ -269,7 +269,6 @@ function start_fish()
 
 function create_zip()
 {
-  #7za a 20130930-GoogleRelocationSubmittedDocuments-col.zip 20130930-* -tzip -p
   OUT_FILE="${1}"
   shift
   IN_FILES="${*}"
