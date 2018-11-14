@@ -50,7 +50,11 @@ end
 
 source ~/.config/fish/abbrs.fish
 
-set -x PATH $PATH $HOME/bin/homebrew/bin
-set -x PATH $PATH $HOME/bin/pdfjam/bin
-set -x PATH $PATH $HOME/rc/common/functions
-set -x PATH $PATH $HOME/work/chrome/depot_tools/
+if test -d $HOME/bin/homebrew/bin
+  set -gx PATH $PATH $HOME/bin/homebrew/bin
+end
+if test -d $HOME/bin/pdfjam/bin
+  set -gx PATH $PATH $HOME/bin/pdfjam/bin
+end
+set -gx PATH $PATH $HOME/rc/common/functions
+set -gx PATH $PATH $HOME/work/chrome/depot_tools/
