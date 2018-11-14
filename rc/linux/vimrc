@@ -1,4 +1,8 @@
-source $HOME/rc/goog/google.vim
+let google_vim = "$HOME/rc/goog/google.vim"
+if filereadable(google_vim)
+  source google_vim
+endif
+
 if has("python") || has("python3")
   let ycm_vimrc = "$HOME/rc/goog/ycm.vim"
   if filereadable(ycm_vimrc)
