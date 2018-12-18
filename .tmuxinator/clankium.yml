@@ -35,4 +35,4 @@ windows:
   - src2:
   - g_clank: pushd clank
   - src_clank: pushd clank
-  - log:
+  - log: tail -f /tmp/profile/device.log | grep --line-buffered -i 'SafeBrowsing\|telem'
