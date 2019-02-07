@@ -10,6 +10,7 @@ call plug#begin('~/.vim/plugged')
 " let Vundle manage Vundle, required
 Plug 'gmarik/Vundle.vim'
 
+Plug 'aawc/a.vim'
 Plug 'bling/vim-airline'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'groenewege/vim-less'
