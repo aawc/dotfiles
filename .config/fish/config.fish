@@ -42,7 +42,6 @@ function fish_prompt
     set_color $fish_color_error
     printf '[%s] ' $last_status
     set_color normal
-    set -ge status
   end
 
   set_color normal
