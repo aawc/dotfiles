@@ -1,0 +1,10 @@
+# ~/.tmuxinator/clankium.yml
+
+name: _oss-fuzz_
+root: ~/git/hub/aawc/oss-fuzz
+startup_pane: 1
+
+windows:
+  - g: git branch -vv; git branch -vv --remote
+  - src: 
+  - fuzz: set PROJECT_NAME unrar; python infra/helper.py build_fuzzers --sanitizer address $PROJECT_NAME > /tmp/fuzz_log.log 2>&1; and python infra/helper.py run_fuzzer $PROJECT_NAME unrar_fuzzer -timeout=300;
