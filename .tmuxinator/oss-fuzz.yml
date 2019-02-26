@@ -1,4 +1,4 @@
-# ~/.tmuxinator/clankium.yml
+# ~/.tmuxinator/oss-fuzz.yml
 
 name: _oss-fuzz_
 root: ~/git/hub/aawc/oss-fuzz
