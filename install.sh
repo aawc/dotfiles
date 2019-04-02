@@ -10,6 +10,7 @@ function InstallDotFiles
     .bashrc \
     .config/coc \
     .config/fish \
+    .config/nvim/coc-settings.json \
     .config/nvim/init.vim \
     .config/powerline \
     .config/redshift.conf \

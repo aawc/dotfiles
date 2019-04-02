@@ -2,6 +2,7 @@ imap jk <ESC>
 imap kj <ESC>
 
 exec ":source $HOME" . "/rc/common/plug.vimrc"
+exec ":source $HOME" . "/rc/common/coc.vimrc"
 exec ":source $HOME" . "/rc/common/easymotion.vimrc"
 
 " DetectIndent settings
