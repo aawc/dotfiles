@@ -18,6 +18,7 @@ Plug 'groenewege/vim-less'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'majutsushi/tagbar'
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'roryokane/detectindent'
 Plug 'skammer/vim-css-color'
 Plug 'tmux-plugins/vim-tmux'
