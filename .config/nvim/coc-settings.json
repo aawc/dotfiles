@@ -1,11 +1,4 @@
 {
-  "languageserver": {
-    "clangd": {
-      "command": "clangd",
-      "rootPatterns": ["compile_flags.txt", "compile_commands.json", ".vim/", ".git/", ".hg/"],
-      "filetypes": ["c", "cc", "cpp", "objc", "objcpp"]
-    }
-  },
   "suggest.minTriggerInputLength": 2,
   "suggest.noselect": false,
   "suggest.triggerAfterInsertEnter": true
