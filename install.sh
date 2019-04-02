@@ -8,6 +8,7 @@ function InstallDotFiles
   for TARGET in \
     .ackrc \
     .bashrc \
+    .config/coc \
     .config/fish \
     .config/nvim/init.vim \
     .config/powerline \
