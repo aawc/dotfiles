@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "coc-emoji": "^1.2.2",
+    "coc-json": "^1.0.12"
+  }
+}
