@@ -2,5 +2,17 @@
   "suggest.minTriggerInputLength": 2,
   "suggest.noselect": false,
   "suggest.triggerAfterInsertEnter": true,
-  "suggest.preferCompleteThanJumpPlaceholder": true
+  "suggest.preferCompleteThanJumpPlaceholder": true,
+
+  "diagnostic.level": "hint",
+  "coc.preferences.messageLevel": "more",
+
+  "coc.source.emoji.enable": true,
+  "coc.source.emoji.filetypes": null,
+  "snippets.trace": "verbose",
+
+  "suggest.autoTrigger": "always",
+  "suggest.maxCompleteItemCount": 50,
+  "codeLens.enable": true,
+  "diagnostic.virtualTextLines": 3
 }
