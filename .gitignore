@@ -72,3 +72,6 @@ fish_history
 
 # vim-plugged
 .vim/plugged
+
+# generated file.
+.config/fish/fish_variables
