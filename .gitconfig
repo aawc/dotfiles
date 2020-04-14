@@ -32,7 +32,7 @@
   default = simple
 
 [user]
-  email = ca.aawc@yahoo.com
+  email = git.bin@khaneja.org
   name = Varun Khaneja
   signingkey = B2A908FABDC2403D
 
