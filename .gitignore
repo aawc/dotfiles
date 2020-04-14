@@ -73,5 +73,6 @@ fish_history
 # vim-plugged
 .vim/plugged
 
-# generated file.
+# generated files.
 .config/fish/fish_variables
+.config/coc/extensions/db.json
