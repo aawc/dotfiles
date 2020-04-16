@@ -1,6 +1,6 @@
-# ~/.tmuxinator/enamel.yml
+# ~/.tmuxinator/sb.yml
 
-name: _enamel_
+name: _sb_
 root: ~/work/chrome/src
 startup_pane: 1
 
@@ -29,10 +29,10 @@ startup_pane: 1
 # post: tmux -CC attach -t enamel
 
 windows:
-  - git:
+  - git: git branches -vv
   - r: export DISPLAY=:20.0; . ~/rc/goog/use_goma.fish
   - test:  export DISPLAY=:20.0; . ~/rc/goog/use_goma.fish
-  - db:  cd components/safe_browsing/db
+  - cosb:  cd components/safe_browsing
   - cosb: cd components/safe_browsing
   - chbrsb: cd chrome/browser/safe_browsing
   - src:
