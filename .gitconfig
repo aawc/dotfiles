@@ -36,3 +36,6 @@
   email = git.bin@khaneja.org
   name = Varun Khaneja
   signingkey = 0F5BD13AF968F800
+
+[http]
+  cookiefile = ~/.gitcookies # Needed for Chromium development
