@@ -29,7 +29,7 @@ startup_pane: 1
 # post: tmux -CC attach -t enamel
 
 windows:
-  - git: git branches -vv
+  - git: git config http.cookiefile ~/.gitcookies; git branches -vv
   - r: export DISPLAY=:20.0; . ~/rc/goog/use_goma.fish
   - test:  export DISPLAY=:20.0; . ~/rc/goog/use_goma.fish
   - cosb:  cd components/safe_browsing
