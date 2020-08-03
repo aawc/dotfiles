@@ -34,7 +34,4 @@
 [user]
   email = git.bin@khaneja.org
   name = Varun Khaneja
-  signingkey = B2A908FABDC2403D
-
-[http]
-  cookiefile = /usr/local/google/home/vakh/.gitcookies
+  signingkey = 0F5BD13AF968F800
