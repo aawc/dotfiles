@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "coc-emoji": "^1.2.2",
-    "coc-java": "^1.2.5",
-    "coc-json": "^1.0.12",
-    "coc-snippets": "^2.0.5"
-  }
-}
