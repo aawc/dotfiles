@@ -2,6 +2,7 @@
   alias = config --get-regexp alias
   branchdiff = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' origin/master..HEAD
   branches = map-branches -vv
+  cleanup = "!git branch --merged | grep -v '*' | grep -v '\\<clean\\>' | xargs -n 1 git branch -d"
   cm = commit -m
   f = "!git ls-files | grep -i"
   l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
