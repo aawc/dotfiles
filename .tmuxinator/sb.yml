@@ -29,12 +29,12 @@ startup_pane: 1
 # post: tmux -CC attach -t enamel
 
 windows:
-  - git: git config http.cookiefile ~/.gitcookies; git branches -vv
-  - r: export DISPLAY=:20.0; . ~/rc/goog/use_goma.fish
-  - test:  export DISPLAY=:20.0; . ~/rc/goog/use_goma.fish
-  - cosb:  cd components/safe_browsing
+  - git: git config http.cookiefile ~/.gitcookies; set -x SKIP_GCE_AUTH_FOR_GIT 1; git branches -vv
+  - r: export DISPLAY=:20.0;
+  - test: export DISPLAY=:20.0;
+  - cosb: cd components/safe_browsing
   - cosb: cd components/safe_browsing
   - chbrsb: cd chrome/browser/safe_browsing
   - src:
   - log:
-  - profile: mkdir -p /tmp/profile/Safe\ Browsing; cd /tmp/profile/Safe\ Browsing
+  - profile: mkdir -p ~/chrome_profiles/tmp/profile/Safe\ Browsing; ln -s ~/chrome_profiles/tmp/profile /tmp/profile; cd /tmp/profile/Safe\ Browsing
