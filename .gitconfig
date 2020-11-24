@@ -15,6 +15,11 @@
   diff = auto
   interactive = auto
   ui = auto # covers diff = true, status = auto, branch = auto
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
 
 [core]
   excludesfile = ~/.gitignore
