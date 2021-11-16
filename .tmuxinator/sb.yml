@@ -26,10 +26,12 @@ startup_pane: 1
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t enamel
+# post: tmux -CC attach -t sb
 
 windows:
-  - git: git config http.cookiefile ~/.gitcookies; set -x SKIP_GCE_AUTH_FOR_GIT 1; git branches -vv
+  - git:
+    - git config http.cookiefile ~/.gitcookies
+    - set -x SKIP_GCE_AUTH_FOR_GIT 1
   - r: export DISPLAY=:20.0;
   - test: export DISPLAY=:20.0;
   - cosb: cd components/safe_browsing
@@ -37,4 +39,7 @@ windows:
   - chbrsb: cd chrome/browser/safe_browsing
   - src:
   - log:
-  - profile: mkdir -p ~/chrome_profiles/tmp/profile/Safe\ Browsing; ln -s ~/chrome_profiles/tmp/profile /tmp/profile; cd /tmp/profile/Safe\ Browsing
+  - profile:
+    - mkdir -p ~/chrome_profiles/tmp/profile/Safe\ Browsing
+    - ln -s ~/chrome_profiles/tmp/profile /tmp/
+    - cd /tmp/profile/Safe\ Browsing
