@@ -30,5 +30,5 @@ function RebuildCtags
 CHROME_SRC_BASE_DIR="/usr/local/google/home/vakh/work/chrome/src"
 
 [ "$0" = "$BASH_SOURCE" ] && RebuildCtags \
-  "${CHROME_SRC_BASE_DIR}/components/safe_browsing_db" \
+  "${CHROME_SRC_BASE_DIR}/components/safe_browsing" \
   "${CHROME_SRC_BASE_DIR}/chrome/browser/safe_browsing"
