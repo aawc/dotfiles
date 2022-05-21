@@ -49,6 +49,9 @@ end
 
 source ~/.config/fish/abbrs.fish
 
+if test -d /usr/local/bin
+  set -x PATH $PATH /usr/local/bin
+end
 if test -d $HOME/bin/homebrew/bin
   set -x PATH $PATH $HOME/bin/homebrew/bin
 end
