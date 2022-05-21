@@ -2,7 +2,7 @@
 
 function InstallDotFiles
 {
-  local git_dir="$(GetGitRepoPath ${0})"
+  local git_dir="$(_GetGitRepoPath ${0})"
   local old_extension=".OLD"
 
   for TARGET in \
@@ -37,6 +37,8 @@ function InstallDotFiles
       if [[ ! -e "${filepath_home}" ]]; then
         mkdir -p -v "$(dirname ${filepath_home})"
         ln -svi "${filepath_git}" "${filepath_home}"
+      else
+        echo "Exists: ${filepath_home}"
       fi
     fi
   done
@@ -49,7 +51,14 @@ function InstallDotFiles
   fi
 }
 
-function GetGitRepoPath
+function ShowSuggestions
+{
+  echo "====================="
+  echo "Thanks for installing"
+  echo "Consider: sudo apt-get install aptitude fish tmuxinator neovim powerline powerline-gitstatus nodejs locate"
+}
+
+function _GetGitRepoPath
 {
   local script_path="${PWD}/${0}"
   local script_dir="$(dirname ${script_path})"
@@ -61,3 +70,4 @@ function GetGitRepoPath
 }
 
 InstallDotFiles $0
+ShowSuggestions

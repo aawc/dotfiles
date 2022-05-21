@@ -1,6 +1,6 @@
-# ~/.tmuxinator/enamel.yml
+# ~/.tmuxinator/sb.yml
 
-name: _enamel_
+name: _sb_
 root: ~/work/chrome/src
 startup_pane: 1
 
@@ -26,15 +26,20 @@ startup_pane: 1
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t enamel
+# post: tmux -CC attach -t sb
 
 windows:
   - git:
-  - r: export DISPLAY=:20.0; . ~/rc/goog/use_goma.fish
-  - test:  export DISPLAY=:20.0; . ~/rc/goog/use_goma.fish
-  - db:  cd components/safe_browsing/db
+    - git config http.cookiefile ~/.gitcookies
+    - set -x SKIP_GCE_AUTH_FOR_GIT 1
+  - r: export DISPLAY=:20.0;
+  - test: export DISPLAY=:20.0;
+  - cosb: cd components/safe_browsing
   - cosb: cd components/safe_browsing
   - chbrsb: cd chrome/browser/safe_browsing
   - src:
   - log:
-  - profile: mkdir -p /tmp/profile/Safe\ Browsing; cd /tmp/profile/Safe\ Browsing
+  - profile:
+    - mkdir -p ~/chrome_profiles/tmp/profile/Safe\ Browsing
+    - ln -s ~/chrome_profiles/tmp/profile /tmp/
+    - cd /tmp/profile/Safe\ Browsing

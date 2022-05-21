@@ -49,6 +49,10 @@ end
 
 source ~/.config/fish/abbrs.fish
 
+# For signing git commits
+set GPG_TTY (tty)
+
+# PATH
 if test -d /usr/local/bin
   set -x PATH $PATH /usr/local/bin
 end
