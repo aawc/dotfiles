@@ -5,12 +5,6 @@ exec ":source $HOME" . "/rc/common/plug.vimrc"
 exec ":source $HOME" . "/rc/common/coc.vimrc"
 exec ":source $HOME" . "/rc/common/easymotion.vimrc"
 
-" DetectIndent settings
-augroup DetectIndent
-  autocmd!
-  autocmd BufReadPost * DetectIndent
-augroup END
-
 " Fugitive settings
 if exists('s:fugitive_loaded')
   nnoremap <silent> <leader>gs  :<C-u>Gstatus<CR>
