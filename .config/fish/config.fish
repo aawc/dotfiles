@@ -64,3 +64,7 @@ if test -d $HOME/bin/pdfjam/bin
 end
 set -x PATH $PATH $HOME/rc/common/functions
 set -x PATH $PATH $HOME/work/chrome/depot_tools
+
+set -x DOTFILES_WORK_PATH $HOME/git/sso/$USER/dotfiles_work
+set -x DOTFILES_WORK_FISH_CONFIG_PATH $DOTFILES_WORK_PATH/.config/fish
+source $DOTFILES_WORK_FISH_CONFIG_PATH/config.fish
