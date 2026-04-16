@@ -133,6 +133,7 @@ function cp_p()
 }
 
 export GREP_COLOR='1;37;41'
+export GREP_COLORS='mt=1;37;41'
 
 # PATH
 PATH=$PATH:/usr/local/sbin:/usr/sbin
@@ -282,3 +283,6 @@ function create_zip()
 fi
 #end interactive check
 
+
+export SKIP_GCE_AUTH_FOR_GIT=1
+export PYTHONPYCACHEPREFIX=~/.pycache
