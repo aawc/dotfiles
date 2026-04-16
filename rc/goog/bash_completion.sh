@@ -2,8 +2,10 @@
 
 function run
 {
-  echo "bash_completion.sh: Update 'UPDATE_THIS_PATH' when needed"
-  return
+  if [[ $- == *i* ]]; then
+    echo "bash_completion.sh: Update 'UPDATE_THIS_PATH' when needed"
+    return
+  fi
 
   local localBashCompletionFile="/etc/bash_completion.d/span"
   local remoteBashCompletionFile="/UPDATE_THIS_PATH/span.completion"
