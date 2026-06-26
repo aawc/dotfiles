@@ -12,21 +12,11 @@ Plug 'gmarik/Vundle.vim'
 
 Plug 'aawc/a.vim'
 Plug 'bling/vim-airline'
-Plug 'chrisbra/vim-diff-enhanced'
-Plug 'gabrielelana/vim-markdown'
 Plug 'groenewege/vim-less'
 Plug 'hail2u/vim-css3-syntax'
-Plug 'honza/vim-snippets'
-Plug 'Lokaltog/vim-easymotion'
-Plug 'majutsushi/tagbar'
-Plug 'roryokane/detectindent'
-Plug 'skammer/vim-css-color'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tpope/vim-fugitive' | let s:fugitive_loaded = 1
 Plug 'pangloss/vim-javascript'
-if has("python") || has("python3")
-  Plug 'Valloric/MatchTagAlways'
-endif
 
 let javascript_enable_domhtmlcss=1
 let g:javascript_conceal=1

@@ -23,4 +23,4 @@ endif
 
 " Save the state of folds on close and reload on launch.
 au BufWinLeave * mkview
-au BufWinEnter * silent loadview
+au BufWinEnter * silent! loadview
