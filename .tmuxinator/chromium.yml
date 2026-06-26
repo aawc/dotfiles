@@ -1,0 +1,18 @@
+# ~/.tmuxinator/sb.yml
+
+name: _chromium_
+root: ~/work/chrome/src
+startup_pane: 1
+
+windows:
+  - git:
+    - set -x SKIP_GCE_AUTH_FOR_GIT 1
+    - /usr/local/google/home/vakh/git/sso/vakh/my-chrome-commands/git.fish
+  - br:
+    - /usr/local/google/home/vakh/git/sso/vakh/my-chrome-commands/build_and_run.fish
+  - test:
+    - /usr/local/google/home/vakh/git/sso/vakh/my-chrome-commands/test.fish
+  - src:
+  - gemini: 
+  - log:
+    - /usr/local/google/home/vakh/git/sso/vakh/my-chrome-commands/view_log.fish
