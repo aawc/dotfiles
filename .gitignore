@@ -81,3 +81,7 @@ fish_history
 .config/systemd/user/jetski-hub.service
 .config/systemd/user/default.target.wants/jetski-hub.service
 .config/systemd/user/jetski-hub.service.d/
+
+# Ignore local systemd user services for VS Code
+.config/systemd/user/code.service
+.config/systemd/user/default.target.wants/code.service
