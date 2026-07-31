@@ -23,10 +23,6 @@
 
 [core]
   excludesfile = ~/.gitignore
-
-[credential]
-  helper = corpsso
-
 [diff]
   tool = vimdiff
 #  external = /usr/local/google/home/vakh/rc/common/diff.py
@@ -41,6 +37,9 @@
   email = git.bin@khaneja.org
   name = Varun Khaneja
   signingkey = 0F5BD13AF968F800
+
 [include]
   path = ~/.gitconfig.local
+[includeIf "gitdir:~/git/sso/vakh/"]
+  path = ~/vakh/git/sso/vakh/dotfiles_work/.gitconfig
 
